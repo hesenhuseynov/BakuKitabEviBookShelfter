@@ -1,0 +1,89 @@
+<!-- <app-header></app-header> -->
+<div class="container my-4">
+  <ul class="nav nav-tabs justify-content-center" id="productTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" [class.active]="activeTab === 'featured'" (click)="selectTab('featured')">Önə çıxan Kitablar</a>
+      <span class="arrow-icon"></span>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" [class.active]="activeTab === 'new'" (click)="selectTab('new')">Yeni Gələnlər</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" [class.active]="activeTab === 'most'" (click)="selectTab('most')">Ən çox baxılan</a>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="productTabContent">
+    <div *ngIf="activeTab === 'featured'" class="tab-pane fade show active">
+      <div class="row mt-3">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let product of featuredProducts">
+          <div class="card">
+            <img *ngIf="product.imageUrls.length > 0" [src]="product.imageUrls[0]" class="card-img-top" alt="Product Image">
+            <div class="card-body text-center">
+              <h5 class="card-title">
+                <a href="/books/{{ product.bookId }}" target="_self" class="text-dark">{{ product.bookName }}</a>
+              </h5>
+              <h6 class="text-muted">{{ product.authorName }}</h6>
+              <p class="card-text">{{ product.price }}₼</p>
+              <div class="card-buttons mt-3">
+                <button class="icon-btn icon-cart"
+                 (click)="addToBasket(product.bookId)"  
+                data-tooltip="Səbətə Əlavə et"></button>
+                <button class="icon-btn icon-eye" data-tooltip="Detayları Gör"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="activeTab === 'new'" class="tab-pane fade show active">
+      <div class="row mt-3">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let product of newArrivals">
+          <div class="card">
+            <img *ngIf="product.imageUrls.length > 0" [src]="product.imageUrls[0]" class="card-img-top" alt="Product Image">
+            <div class="card-body text-center">
+              <h5 class="card-title">
+                <a href="/books/{{ product.bookId }}" target="_self" class="text-dark">{{ product.bookName }}</a>
+              </h5>
+              <h6 class="text-muted">{{ product.authorName }}</h6>
+              <p class="card-text">{{ product.price }}₼</p>
+              <div class="card-buttons mt-3">
+                <button class="icon-btn icon-cart" 
+                (click)="addToBasket(product.bookId)"
+                 data-tooltip="Səbətə Əlavə et">
+                 
+                </button>
+
+                <button class="icon-btn icon-eye" data-tooltip="Detayları Gör"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="activeTab === 'most'" class="tab-pane fade show active">
+      <div class="row mt-3">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let product of mostViewProducts">
+          <div class="card">
+            <img *ngIf="product.imageUrls.length > 0" [src]="product.imageUrls[0]" class="card-img-top" alt="Product Image">
+            <div class="card-body text-center">
+              <h5 class="card-title">
+                 
+                <!-- <a [routerLink]="['/books', product.bookId]" class="text-dark">{{ product.bookName }}</a> -->
+                <a href="/books/{{ product.bookId }}" target="_self" class="text-dark">{{ product.bookName }}</a>
+
+              </h5>
+              <h6 class="text-muted">{{ product.authorName }}</h6>
+              <p class="card-text">{{ product.price }}₼</p>
+              <div class="card-buttons mt-3">
+                <button class="icon-btn icon-cart" (click)="addToBasket(product.bookId)" data-tooltip="Səbətə Əlavə et"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

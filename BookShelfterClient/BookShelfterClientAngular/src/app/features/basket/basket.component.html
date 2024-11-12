@@ -1,0 +1,63 @@
+<div class="container my-5" *ngIf="basket">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="text-uppercase mb-4"><i class="fas fa-shopping-cart"></i> Səbətim</h3>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-8">
+        <div *ngFor="let item of basket.items" class="card mb-3">
+          <div class="row g-0 align-items-center">
+            <div class="col-md-3">
+              <img [src]="item.imageUrls || 'https://via.placeholder.com/150'" alt="{{item.productName}}" class="img-fluid rounded-start">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">{{item.productName}}</h5>
+                <div class="d-flex align-items-center">
+                  <button (click)="updateQuantity(item, -1)" class="btn btn-outline-secondary btn-sm">-</button>
+                  <input type="text" [(ngModel)]="item.quantity" class="form-control mx-2 text-center" style="width: 50px;" readonly>
+                  <button (click)="updateQuantity(item, 1)" class="btn btn-outline-secondary btn-sm">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 text-center">
+              <h5 class="fw-bold">{{item.price | currency}}</h5>
+              <h6 class="fw-bold">Ümumi: {{item.totalPrice | currency}}</h6>
+              <button (click)="removeItem(item.bookId)" class="btn btn-outline-danger btn-sm mt-2"><i class="fas fa-trash-alt"></i> Sil</button>
+            </div>
+          </div>
+        </div>
+  
+        <button (click)="clearBasket()"   [disabled]="isBasketEmpty" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i> Səbəti təmizlə</button>
+      </div>
+  
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Alışveriş icmalı</h5>
+            <div class="d-flex justify-content-between">
+              <span>Səbətin  Toplam tutarı</span>
+              <span>{{basket.total | currency}}</span>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span>Kargo rüsumu</span>
+              <span>2  manat</span>
+            </div>
+            <hr>
+            <div id="totalPrice" class="d-flex justify-content-between fw-bold">
+              <span >Ümumi toplam</span>
+              <span>{{basket.total + 2 | currency}}</span>
+            </div>
+            <button  id="send-order" class="btn btn-warning w-100 mt-3" (click)="goToOrderPage()"
+            [disabled]="isBasketEmpty">Sifariş Ver</button>
+          </div>
+          <div class="card-footer text-center">
+            <a routerLink="/home" class="btn btn-outline-primary w-100">Alışverişe Davam et</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

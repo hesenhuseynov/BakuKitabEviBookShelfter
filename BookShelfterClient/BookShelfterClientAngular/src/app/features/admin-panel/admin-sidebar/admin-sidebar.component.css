@@ -1,0 +1,30 @@
+#sidebar-wrapper {
+    min-width: 250px;
+    max-width: 250px;
+    background-color: #343a40;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    transition: all 0.3s;
+
+  }
+  
+  .sidebar-heading {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+  
+  .list-group-item {
+    font-family: "Montserrat", sans-serif;
+
+    border: none;
+    padding: 20px;
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .list-group-item:hover {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  

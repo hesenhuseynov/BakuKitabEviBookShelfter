@@ -1,0 +1,53 @@
+<div class="container mt-5">
+    <h2>Redaktə et</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="bookName">Kitab Adı</label>
+        <input type="text" id="bookName" [(ngModel)]="book.bookName" name="bookName" class="form-control" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="authorName">Yazar Adı</label>
+        <input type="text" id="authorName" [(ngModel)]="book.authorName" name="authorName" class="form-control" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="price">Qiymət</label>
+        <input type="number" id="price" [(ngModel)]="book.price" name="price" class="form-control" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="stock">Stok</label>
+        <input type="number" id="stock" [(ngModel)]="book.stock" name="stock" class="form-control" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Açıqlama</label>
+        <textarea id="description" [(ngModel)]="book.description" name="description" class="form-control" rows="3"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="category">Kategoriya</label>
+        <select id="category" [(ngModel)]="book.categoryId" name="categoryId" class="form-control" required>
+            <option *ngFor="let category of categories" [value]="category.categoryId">{{ category.categoryName }}</option>
+        </select>
+      </div>
+      
+  
+      <div class="form-group">
+        <label for="language">Dil</label>
+        <select id="language" [(ngModel)]="book.languageId" name="languageId" class="form-control" required>
+            <option *ngFor="let language of languages" [value]="language.id" [selected]="language.id === book.languageId">{{ language.name }}</option>
+         </select>
+      </div>
+  
+      <!-- <div class="form-group">
+        <label for="cover">ı</label>
+        <input type="file" id="cover" (change)="onFileSelected($event)" class="form-control" accept="image/*">
+      </div> -->
+  
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="loading">
+        {{ loading ? 'Processing...' : 'Edit' }}
+    </button>
+    </form>
+</div>

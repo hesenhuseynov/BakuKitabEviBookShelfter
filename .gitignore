@@ -1,0 +1,17 @@
+BookShelfter/Presentation/BookShelfter.API/appsettings.Development.json
+BookShelfter/Presentation/BookShelfter.API/bookimageproject-669337c4b25e.json
+/BookShelfter/Presentation/BookShelfter.API/bin/
+/BookShelfter/Presentation/BookShelfter.API/obj/
+/BookShelfter/publish/
+/BookShelfter/bin/
+/BookShelfter/obj/
+/BookShelfter/Test/bin/
+/BookShelfter/Test/obj/
+.vs/
+*.log
+docker-compose.override.yml
+docker-compose.yml
+Dockerfile
+.firebase/
+firebase.json
+.firebaserc

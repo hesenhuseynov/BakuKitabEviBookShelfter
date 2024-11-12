@@ -1,0 +1,69 @@
+
+<header id="header" class="site-header">
+  <app-navbar></app-navbar>
+
+  <div class="header-actions d-flex align-items-center justify-content-between py-2">
+    <div class="browse-categories dropdown">
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="categoriesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+        <p style="margin: 0 7px;">Kitap Kategoriyaları</p>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+        <app-category-list></app-category-list>
+      </ul>
+    </div>
+    <div class="search-bar d-flex">
+      <input type="text" class="form-control" 
+      placeholder="Bütün mağazanı burada axtarın"
+       [(ngModel)]="searchKeyword">
+      <button class="btn btn-success" (click)="searchBooks()" disabled>Axtarış</button>
+    </div>
+    <div class="user-options d-flex align-items-center">
+      <ng-container *ngIf="isLoggedIn$ | async; else loggedOut">
+     
+      </ng-container>
+    
+      <ng-template #loggedOut>
+        <div class="login-register me-4">
+          <a class="text-dark" routerLink="/register">Qeydiyyat</a> və ya <a class="text-dark" routerLink="/login">Daxil Ol</a>
+        </div>
+      </ng-template>
+      <div class="shopping-cart d-flex align-items-center" (click)="toggleDropdown()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-amount ms-2">{{ (totalPrice$ | async)?.toFixed(2) }}₼</span>
+        <span *ngIf="(itemCount$ | async) as itemCount">
+          <span *ngIf="itemCount > 0" class="badge bg-danger ms-2">{{ itemCount }}</span>
+        </span>
+        
+        <!-- <div class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}">
+          <ng-container *ngIf="(basket$ | async) as basket">
+            <div *ngFor="let item of basket.items">
+              <p>{{ item.productName }} - {{ item.quantity }} x ₼{{ item.price }}</p>
+            </div>
+          </ng-container>
+          <div class="dropdown-divider"></div>
+          <a routerLink="/basket" class="dropdown-item text-center">Sepete Git</a>
+        </div> -->
+        <div class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}">
+          <ng-container *ngIf="basket$ | async as basket">
+            <div *ngFor="let item of basket.items" class="basket-item d-flex align-items-center">
+              <img *ngIf="item.imageUrls.length > 0; else placeholderImage" [src]="item.imageUrls[0]" class="basket-item-image me-2">
+              <ng-template #placeholderImage>
+                  <img src="path/to/placeholder-image.png" alt="No Image" class="basket-item-image me-2">
+              </ng-template>
+              <div class="basket-item-details">
+                  <p>{{ item.productName }}... - {{ item.quantity }} x ₼{{ item.price }}</p>
+              </div>
+              <button (click)="removeItem(item.bookId)" class="btn btn-sm btn-danger">Sil</button>
+          </div>
+            <div *ngIf="basket.items.length > 0" class="summary">
+              <a routerLink="/basket" class="btn btn-success">Səbətə get</a>
+              <!-- <a routerLink="/checkout" class="btn btn-primary">Check out </a> -->
+            </div>
+          </ng-container>
+        </div>
+        </div>
+      </div>
+    </div>
+
+</header>

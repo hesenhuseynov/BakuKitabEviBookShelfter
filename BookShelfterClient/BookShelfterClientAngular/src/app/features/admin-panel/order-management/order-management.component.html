@@ -1,0 +1,39 @@
+<div class="order-management-container">
+  <h2>Order Managemenet
+  </h2>
+
+  <div *ngIf="orders.length === 0" class="no-orders">
+    <p>Hələki heçbir sifariş yoxdur.</p>
+  </div>
+
+  <div *ngIf="orders.length > 0">
+    <table class="order-table">
+      <thead>
+        <tr>
+          <th>Sifraiş nömrəsi</th>
+          <th>Tarix</th>
+          <th>Address</th>
+          <th>Status</th>
+          <th>SifarişDetal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.orderNumber }}</td>  
+          <td>{{ order.orderDate | date:'short' }}</td>
+          <td>{{ order.deliveryAddress }}</td>
+          <td [ngClass]="{
+            'pending': order.status === 0,
+            'confirmed': order.status === 1,
+            'shipped': order.status === 2,
+            'delivered': order.status === 3,
+            'canceled': order.status === 4
+          }">
+            {{ getOrderStatusLabel(order.status) }}
+          </td>
+          <td><button (click)="viewOrderDetails(order.id)" class="view-details-button">Detallar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

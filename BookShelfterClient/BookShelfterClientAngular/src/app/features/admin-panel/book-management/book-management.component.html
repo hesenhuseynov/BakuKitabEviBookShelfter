@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h1>Book management </h1>
+  <button class="btn btn-primary mb-3" [routerLink]="['/admin-panel/books/add']">Add  Book  </button>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Kitab Adı</th>
+        <th>Yazar</th>
+        <th>Qiymət</th>
+        <th>Stok</th>
+        <th>Kategoriya</th>
+        <th>Proseslər</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.bookName }}</td>
+        <td>{{ book.authorName }}</td>
+        <td>{{ book.price }}</td>
+        <td>{{ book.stock }}</td>
+        <td>{{ book.categoryId }}</td> <!-- Burada categoryName kullandığına dikkat et -->
+        <td>
+          <button class="btn btn-warning btn-sm" (click)="editBook(book.bookId)">Edit</button>
+          <button (click)="deleteBook(book.bookId)" id="deleteBook" class="btn btn-danger">Sil</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

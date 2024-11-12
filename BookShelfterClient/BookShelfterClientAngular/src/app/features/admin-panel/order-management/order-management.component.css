@@ -1,0 +1,91 @@
+.order-management-container {
+  padding: 10px;
+  max-width: 1000px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-table th, .order-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.order-table th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+.order-table td {
+  font-size: 13px;
+  color: #555;
+}
+
+.view-details-button {
+  padding: 4px 8px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.view-details-button:hover {
+  background-color: #218838;
+}
+
+.pending {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.confirmed {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.shipped {
+  color: #9c27b0;
+  font-weight: bold;
+}
+
+.delivered {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.canceled {
+  color: #f44336;
+  font-weight: bold;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+  .order-management-container {
+      padding: 5px;
+  }
+
+  .order-table th, .order-table td {
+      padding: 8px;
+      font-size: 12px;
+  }
+
+  .view-details-button {
+      font-size: 10px;
+      padding: 3px 6px;
+  }
+}

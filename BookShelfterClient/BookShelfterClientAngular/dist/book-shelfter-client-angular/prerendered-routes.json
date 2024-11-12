@@ -1,0 +1,23 @@
+{
+  "routes": [
+    "/",
+    "/access-denied",
+    "/admin-panel",
+    "/admin-panel/books",
+    "/admin-panel/books/add",
+    "/admin-panel/dashboard",
+    "/admin-panel/orders",
+    "/admin-panel/users",
+    "/basket",
+    "/books",
+    "/categories",
+    "/confirmation-success",
+    "/confirmemail",
+    "/email-verification",
+    "/home",
+    "/login",
+    "/order-success",
+    "/orders/summary",
+    "/register"
+  ]
+}

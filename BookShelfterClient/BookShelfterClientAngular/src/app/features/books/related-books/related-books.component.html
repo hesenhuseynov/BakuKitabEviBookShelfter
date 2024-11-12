@@ -1,0 +1,16 @@
+<div class="related-products mt-4">
+    <h3>Bənzər Kitablar</h3>
+    <div class="book-list">
+        <div *ngFor="let book of relatedBooks" class="book-item">
+            <div class="card">
+                <img [src]="book.imageUrls[0]" class="card-img-top" alt="{{ book.bookName }}">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a (click)="navigateToDetail(book.bookId)" class="text-dark">{{ book.bookName }}</a>
+                    </h5>
+                    <p class="card-text">{{ book.authorName }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

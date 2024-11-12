@@ -1,0 +1,112 @@
+/* Container */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: "Montserrat", sans-serif;
+
+  }
+  
+  /* Başlık */
+  h2 {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 2rem;
+    color: #343a40;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  /* Kart */
+  .card {
+    font-family: "Montserrat", sans-serif;
+
+    border: none;
+    background-color: #ffffff;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Kart Başlığı */
+  .card-body h5 {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.25rem;
+    color: #495057;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Fiyat ve Toplam Bilgileri */
+  .card-body p {
+    margin: 0.25rem 0;
+    font-size: 1rem;
+    color: #6c757d;
+  }
+  
+  /* Textarea ve Select için Genel Stil */
+  textarea.form-control, select.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  /* Genel Toplam */
+  .card-footer h4 {
+    font-size: 1.5rem;
+    color: #343a40;
+    text-align: right;
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+  
+  /* Onay Butonu */
+  .btn-success {
+    font-size: 1.25rem;
+    padding: 15px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }
+  
+  .btn-success:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  /* Mobil Cihazlar için Uyumluluk */
+  @media (max-width: 576px) {
+    .container {
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .card-body h5 {
+      font-size: 1.1rem;
+    }
+  
+    .card-footer h4 {
+      font-size: 1.25rem;
+    }
+  
+    .btn-success {
+      font-size: 1rem;
+      padding: 12px;
+    }
+  }
+  

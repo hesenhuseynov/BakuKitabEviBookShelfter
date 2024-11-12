@@ -1,0 +1,10 @@
+.access-denied {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .access-denied a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  

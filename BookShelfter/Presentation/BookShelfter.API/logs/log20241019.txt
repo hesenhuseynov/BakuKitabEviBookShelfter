@@ -1,0 +1,12 @@
+2024-10-19 03:09:52.258 +04:00 [INF] Server Time: 10/18/2024 11:09:52 PM
+2024-10-19 03:09:52.609 +04:00 [INF] Server Time: 10/18/2024 11:09:52 PM
+2024-10-19 03:10:04.667 +04:00 [INF] Server Time: 10/18/2024 11:10:04 PM
+2024-10-19 03:10:04.683 +04:00 [WRN] Failed to determine the https port for redirect.
+2024-10-19 03:10:04.790 +04:00 [INF] Handling GetAllOrdersQueryRequest
+2024-10-19 03:10:04.795 +04:00 [INF] Handling GetAllOrdersQueryRequest
+2024-10-19 03:10:05.437 +04:00 [WRN] No store type was specified for the decimal property 'UnitPrice' on entity type 'BasketItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-10-19 03:10:05.440 +04:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-10-19 03:10:05.441 +04:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'InvoiceFile'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-10-19 03:10:06.199 +04:00 [INF] Handled GetAllOrdersQueryRequest
+2024-10-19 03:10:06.201 +04:00 [INF] Handled GetAllOrdersQueryResponse  
+2024-10-19 03:10:06.221 +04:00 [INF] HTTP GET /api/Orders/GetAll responded 400 in 1504.1530 ms

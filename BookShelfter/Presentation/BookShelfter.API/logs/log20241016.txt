@@ -1,0 +1,57 @@
+2024-10-16 02:19:34.405 +04:00 [INF] Server Time: 10/15/2024 10:19:34 PM
+2024-10-16 02:19:34.697 +04:00 [INF] Server Time: 10/15/2024 10:19:34 PM
+2024-10-16 02:19:35.059 +04:00 [INF] Server Time: 10/15/2024 10:19:35 PM
+2024-10-16 02:19:35.059 +04:00 [INF] Server Time: 10/15/2024 10:19:35 PM
+2024-10-16 02:19:35.060 +04:00 [INF] Server Time: 10/15/2024 10:19:35 PM
+2024-10-16 02:19:36.551 +04:00 [INF] Server Time: 10/15/2024 10:19:36 PM
+2024-10-16 02:19:36.584 +04:00 [INF] Server Time: 10/15/2024 10:19:36 PM
+2024-10-16 02:19:42.357 +04:00 [INF] Server Time: 10/15/2024 10:19:42 PM
+2024-10-16 02:19:42.358 +04:00 [INF] Server Time: 10/15/2024 10:19:42 PM
+2024-10-16 02:19:42.363 +04:00 [WRN] Failed to determine the https port for redirect.
+2024-10-16 02:19:42.551 +04:00 [INF] HTTP GET /api/books responded 401 in 125.1652 ms
+2024-10-16 02:19:42.614 +04:00 [INF] Handling GetAllCategoryQueryRequest
+2024-10-16 02:19:42.623 +04:00 [INF] Handling GetAllCategoryQueryRequest
+2024-10-16 02:19:44.479 +04:00 [WRN] No store type was specified for the decimal property 'UnitPrice' on entity type 'BasketItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-10-16 02:19:44.482 +04:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-10-16 02:19:44.484 +04:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'InvoiceFile'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-10-16 02:19:45.635 +04:00 [INF] Handled GetAllCategoryQueryRequest
+2024-10-16 02:19:45.638 +04:00 [INF] Handled GetAllCategoryQueryResponse  
+2024-10-16 02:19:45.706 +04:00 [INF] HTTP GET /api/Category/GetAll responded 200 in 3282.6850 ms
+2024-10-16 02:19:45.867 +04:00 [INF] Server Time: 10/15/2024 10:19:45 PM
+2024-10-16 02:19:45.881 +04:00 [INF] HTTP GET /api/books responded 401 in 5.5677 ms
+2024-10-16 02:19:47.070 +04:00 [INF] Server Time: 10/15/2024 10:19:47 PM
+2024-10-16 02:19:47.073 +04:00 [INF] Server Time: 10/15/2024 10:19:47 PM
+2024-10-16 02:19:47.075 +04:00 [INF] HTTP GET /api/books responded 401 in 2.9547 ms
+2024-10-16 02:19:47.081 +04:00 [INF] Handling GetAllCategoryQueryRequest
+2024-10-16 02:19:47.083 +04:00 [INF] Handling GetAllCategoryQueryRequest
+2024-10-16 02:19:47.178 +04:00 [INF] Handled GetAllCategoryQueryRequest
+2024-10-16 02:19:47.180 +04:00 [INF] Handled GetAllCategoryQueryResponse  
+2024-10-16 02:19:47.184 +04:00 [INF] HTTP GET /api/Category/GetAll responded 200 in 108.9513 ms
+2024-10-16 02:19:47.355 +04:00 [INF] Server Time: 10/15/2024 10:19:47 PM
+2024-10-16 02:19:47.357 +04:00 [INF] HTTP GET /api/books responded 401 in 0.3339 ms
+2024-10-16 02:20:59.590 +04:00 [INF] Server Time: 10/15/2024 10:20:59 PM
+2024-10-16 02:20:59.594 +04:00 [INF] HTTP GET /api/Books responded 401 in 1.6136 ms
+2024-10-16 02:21:13.214 +04:00 [INF] Server Time: 10/15/2024 10:21:13 PM
+2024-10-16 02:21:13.317 +04:00 [INF] Created Endpoint called
+2024-10-16 02:21:13.323 +04:00 [WRN] Failed to create book. Reason: null
+2024-10-16 02:21:13.327 +04:00 [INF] HTTP POST /api/Books responded 400 in 110.1462 ms
+2024-10-16 02:22:30.897 +04:00 [INF] Server Time: 10/15/2024 10:22:30 PM
+2024-10-16 02:22:30.901 +04:00 [INF] HTTP GET / responded 404 in 0.3017 ms
+2024-10-16 02:33:11.632 +04:00 [INF] Server Time: 10/15/2024 10:33:11 PM
+2024-10-16 02:33:11.632 +04:00 [INF] Server Time: 10/15/2024 10:33:11 PM
+2024-10-16 02:33:11.641 +04:00 [INF] HTTP GET /api/books responded 401 in 1.0246 ms
+2024-10-16 02:33:11.643 +04:00 [INF] Handling GetAllCategoryQueryRequest
+2024-10-16 02:33:11.645 +04:00 [INF] Handling GetAllCategoryQueryRequest
+2024-10-16 02:33:11.751 +04:00 [INF] Handled GetAllCategoryQueryRequest
+2024-10-16 02:33:11.754 +04:00 [INF] Handled GetAllCategoryQueryResponse  
+2024-10-16 02:33:11.756 +04:00 [INF] HTTP GET /api/Category/GetAll responded 200 in 114.4664 ms
+2024-10-16 02:33:11.960 +04:00 [INF] Server Time: 10/15/2024 10:33:11 PM
+2024-10-16 02:33:11.962 +04:00 [INF] HTTP GET /api/books responded 401 in 0.3055 ms
+2024-10-16 07:09:05.542 +04:00 [INF] Server Time: 10/16/2024 3:09:05 AM
+2024-10-16 07:09:05.604 +04:00 [INF] Created Endpoint called
+2024-10-16 07:09:05.609 +04:00 [WRN] Failed to create book. Reason: null
+2024-10-16 07:09:05.612 +04:00 [INF] HTTP POST /api/Books responded 400 in 56.5382 ms
+2024-10-16 07:15:15.552 +04:00 [INF] Server Time: 10/16/2024 3:15:15 AM
+2024-10-16 07:15:15.558 +04:00 [INF] Created Endpoint called
+2024-10-16 07:15:15.561 +04:00 [WRN] Failed to create book. Reason: null
+2024-10-16 07:15:15.563 +04:00 [INF] HTTP POST /api/Books responded 400 in 9.3204 ms

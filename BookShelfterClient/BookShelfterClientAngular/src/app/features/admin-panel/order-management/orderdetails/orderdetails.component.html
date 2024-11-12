@@ -1,0 +1,32 @@
+
+<div *ngIf="orderDetails" class="container mt-5">
+    <h2 class="mb-4 text-center">Sifariş Detalları</h2>
+  
+    <div class="row mb-3 justify-content-center">
+      <div class="col-md-6">
+        <p><strong>Sifariş Nömrəsi:</strong> {{ orderDetails.orderNumber }}</p>
+        <p><strong>Sifariş Tarixi:</strong> {{ orderDetails.orderDate | date: 'short' }}</p>
+        <p><strong>Çatdırılma Adresi:</strong> {{ orderDetails.deliveryAddress }}</p>
+        <p><strong>Müştəri Telefonu:</strong> {{ orderDetails.customerPhoneNumber }}</p>
+        <p><strong>Ödəmə Metodu:</strong> {{ orderDetails.paymentMethod }}</p>
+      </div>
+    </div>
+        <button (click)="goBackToOrderManagement()" class="btn btn-secondary">Geri </button>
+   
+    <!-- <h3 class="text-center mb-4">Kitab Detalları</h3> -->
+  
+    <div class="row justify-content-center">
+      <div *ngFor="let item of orderDetails.orderDetails" class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img class="card-img-top img-fluid" [src]="item.bookImageUrl" alt="{{ item.bookName }}">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ item.bookName }}</h5>
+            <p class="card-text"><strong>Miqdar:</strong> {{ item.quantity }}</p>
+            <p class="card-text"><strong>Qiymət:</strong> {{ item.price | currency }}₼</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  

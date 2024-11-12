@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Google.Apis" Version="1.68.0" />
+      <PackageReference Include="Google.Apis.Auth" Version="1.68.0" />
+      <PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" />
+      <PackageReference Include="MailKit" Version="4.7.1.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+      <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.6.2" />
+      <PackageReference Include="MimeKit" Version="4.7.1" />
+      <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.6.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="NewFolder\" />
+      <Folder Include="Services\Configurations\" />
+      <Folder Include="Services\Storage\Azure\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Core\BookShelfter.Application\BookShelfter.Application.csproj" />
+    </ItemGroup>
+
+</Project>

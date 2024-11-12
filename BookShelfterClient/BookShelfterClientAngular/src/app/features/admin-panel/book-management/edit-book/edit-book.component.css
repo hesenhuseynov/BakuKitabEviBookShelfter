@@ -1,0 +1,28 @@
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;  
+    margin: 0 auto;  
+    font-family: "Montserrat", sans-serif;
+
+}
+h2{
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    font-size: 14px;  
+    padding: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}

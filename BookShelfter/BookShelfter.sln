@@ -1,0 +1,81 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{4D2E5085-58C9-4561-89E1-4254FEC1C3C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{BDA83996-025A-42FE-B729-C540B4B01EED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{CE23E3D5-6CA0-45A5-9F65-ED98E92E5096}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShelfter.Application", "Core\BookShelfter.Application\BookShelfter.Application.csproj", "{14336E15-F0C1-4829-92CA-0CA431810F39}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShelfter.Domain", "Core\BookShelfter.Domain\BookShelfter.Domain.csproj", "{C6676144-F04E-4403-A85F-0405AAD73FFD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShelfter.Infrastructure", "Infrastructure\BookShelfter.Infrastructure\BookShelfter.Infrastructure.csproj", "{98603CBD-CFBF-448B-9589-0500B9E5BEDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShelfter.Persistence", "Infrastructure\BookShelfter.Persistence\BookShelfter.Persistence.csproj", "{D44C0A9D-6ABA-4711-99D9-1274DF767669}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShelfter.SignalR", "Infrastructure\BookShelfter.SignalR\BookShelfter.SignalR.csproj", "{DE4CF966-8950-47EE-85BE-334B0F6A7924}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShelfter.API", "Presentation\BookShelfter.API\BookShelfter.API.csproj", "{2C6B811D-9F8A-4B56-BAD7-50517E8B0F54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8C28DD39-8356-4DBC-9478-4F2EC337B2CC}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		firebase.json = firebase.json
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShelfter.Test", "BookShelfter.Test\BookShelfter.Test.csproj", "{9CD55900-353D-45F0-BA6A-E3581D237169}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14336E15-F0C1-4829-92CA-0CA431810F39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14336E15-F0C1-4829-92CA-0CA431810F39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14336E15-F0C1-4829-92CA-0CA431810F39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14336E15-F0C1-4829-92CA-0CA431810F39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6676144-F04E-4403-A85F-0405AAD73FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6676144-F04E-4403-A85F-0405AAD73FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6676144-F04E-4403-A85F-0405AAD73FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6676144-F04E-4403-A85F-0405AAD73FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98603CBD-CFBF-448B-9589-0500B9E5BEDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98603CBD-CFBF-448B-9589-0500B9E5BEDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98603CBD-CFBF-448B-9589-0500B9E5BEDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98603CBD-CFBF-448B-9589-0500B9E5BEDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D44C0A9D-6ABA-4711-99D9-1274DF767669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D44C0A9D-6ABA-4711-99D9-1274DF767669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D44C0A9D-6ABA-4711-99D9-1274DF767669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D44C0A9D-6ABA-4711-99D9-1274DF767669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE4CF966-8950-47EE-85BE-334B0F6A7924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE4CF966-8950-47EE-85BE-334B0F6A7924}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4CF966-8950-47EE-85BE-334B0F6A7924}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4CF966-8950-47EE-85BE-334B0F6A7924}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C6B811D-9F8A-4B56-BAD7-50517E8B0F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C6B811D-9F8A-4B56-BAD7-50517E8B0F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C6B811D-9F8A-4B56-BAD7-50517E8B0F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C6B811D-9F8A-4B56-BAD7-50517E8B0F54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CD55900-353D-45F0-BA6A-E3581D237169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CD55900-353D-45F0-BA6A-E3581D237169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CD55900-353D-45F0-BA6A-E3581D237169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CD55900-353D-45F0-BA6A-E3581D237169}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{14336E15-F0C1-4829-92CA-0CA431810F39} = {4D2E5085-58C9-4561-89E1-4254FEC1C3C6}
+		{C6676144-F04E-4403-A85F-0405AAD73FFD} = {4D2E5085-58C9-4561-89E1-4254FEC1C3C6}
+		{98603CBD-CFBF-448B-9589-0500B9E5BEDA} = {BDA83996-025A-42FE-B729-C540B4B01EED}
+		{D44C0A9D-6ABA-4711-99D9-1274DF767669} = {BDA83996-025A-42FE-B729-C540B4B01EED}
+		{DE4CF966-8950-47EE-85BE-334B0F6A7924} = {BDA83996-025A-42FE-B729-C540B4B01EED}
+		{2C6B811D-9F8A-4B56-BAD7-50517E8B0F54} = {CE23E3D5-6CA0-45A5-9F65-ED98E92E5096}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {422985D6-589C-46F0-9E7D-08F8D763301D}
+	EndGlobalSection
+EndGlobal

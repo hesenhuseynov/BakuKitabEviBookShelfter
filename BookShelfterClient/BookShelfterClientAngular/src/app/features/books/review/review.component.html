@@ -1,0 +1,63 @@
+
+<div *ngFor="let review of reviews" class="review">
+    <p><strong>Raiting:</strong>
+      <span *ngFor="let star of stars; let i = index">
+        <i class="fa fa-star" [class.filled]="i < review.rating"></i>
+      </span>
+      {{ review.rating }}
+    </p>
+    <p>{{ review.comment }}</p>
+    <p><em>User: {{ review.userName }}</em></p>     <hr />
+  </div>
+  
+  <!-- Review Ekleme Formu -->
+  <div class="review-form-container" (click)="onReviewSectionClick()">
+    <form *ngIf="isLoggedIn; else loginWarning" (ngSubmit)="addReview(newReviewForm)" #newReviewForm="ngForm" class="review-form">
+      <input type="hidden" name="bookId" [(ngModel)]="newReview.bookId">
+      <input type="hidden" name="userId" [(ngModel)]="newReview.userId"> 
+      
+      <div class="form-group">
+        <label for="rating">Raiting</label>
+        <div class="stars">
+          <i *ngFor="let star of stars; let i = index"
+              (click)="selectStar(i + 1)"
+              (mouseenter)="hoverStar(i + 1)"
+              (mouseleave)="hoverStar(0)"
+              [class.filled]="i < currentRating || i < hoverRating"
+              class="fa fa-star"></i>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="comment">Comment</label>
+        <textarea id="comment" class="form-control" name="comment" [(ngModel)]="newReview.comment"></textarea>
+        <div *ngIf="!newReview.comment && newReviewForm.submitted" class="text-danger">
+       Şərh qismi böş ötürülə bilməz 
+        </div>
+      </div>
+      
+
+      <button type="submit" class="btn btn-primary">Şərh yaz</button>
+    </form>
+  
+    <ng-template #loginWarning>
+      <div class="login-warning">
+        <p>Şərh yaza bilmək üçün  <a href="javascript:void(0);" (click)="showLoginPrompt()">Daxil olmalısınız</a>.</p>
+      </div>
+    </ng-template>
+  </div>
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <div class="login-modal" *ngIf="showModal">
+    <div class="modal-content">
+      <h4>Daxil olmalısınız </h4>
+      <p>Şərh yaza bilmək üçün xaiş olunur hesabınıza  daxil olun.</p>
+      <button class="btn btn-primary" (click)="redirectToLogin()">Daxil ol</button>
+      <button class="btn btn-secondary" (click)="closeModal()">bağla</button>
+    </div>
+
+
+  </div>
+  

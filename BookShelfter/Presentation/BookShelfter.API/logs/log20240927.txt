@@ -1,0 +1,7 @@
+2024-09-27 02:45:28.728 +04:00 [INF] Server Time: 9/26/2024 10:45:28 PM
+2024-09-27 02:45:28.741 +04:00 [INF] Server Time: 9/26/2024 10:45:28 PM
+2024-09-27 02:45:28.744 +04:00 [INF] Handling GetBooksByCategoryQueryRequest
+2024-09-27 02:45:28.745 +04:00 [INF] Handling GetBooksByCategoryQueryRequest
+2024-09-27 02:45:28.828 +04:00 [INF] Handled GetBooksByCategoryQueryRequest
+2024-09-27 02:45:28.829 +04:00 [INF] Handled GetBooksByCategoryQueryResponse  
+2024-09-27 02:45:28.830 +04:00 [INF] HTTP GET /api/Category/1/books responded 400 in 87.7464 ms

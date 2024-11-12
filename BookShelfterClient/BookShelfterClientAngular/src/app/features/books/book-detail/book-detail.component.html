@@ -1,0 +1,73 @@
+<div *ngIf="book" class="container mt-4 book-details-page">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="main-book-image">
+          <img *ngIf="book.imageUrls.length > 0" [src]="book.imageUrls[0]" class="img-fluid main-image" alt="{{ book.bookName }}">
+        </div>
+        <div class="additional-images mt-3">
+          <div *ngFor="let imageUrl of book.imageUrls" class="additional-image-item">
+            <img [src]="imageUrl" class="img-fluid additional-image" alt="Ek Kitap Görseli">
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-8">
+        <h2  class="book-title">{{ book.bookName }}</h2>
+        <h4 class="text-muted author-name">{{ book.authorName }}</h4>
+        <p class="text-muted price">Qiymət: {{ book.price }}₼</p>
+        <p class="text-muted">
+          <strong>Stok vəziyəti:</strong> {{ book.stock > 0 ? 'Mövcud' : 'Stokta yok' }}
+        </p>
+        <p>{{ book.description }}</p>
+  
+        <div class="average-rating">
+          <span class="average-rating-value">{{ averageRating }} out of 5 stars</span>
+          <div class="stars">
+            <i *ngFor="let star of stars; let i = index" 
+                [class.filled]="i < averageRating" 
+                [class.empty]="i >= averageRating" 
+                class="fa fa-star"></i>
+          </div>
+          <p>{{ totalReviews }} global ratings | 
+            <a href="javascript:void(0);" (click)="selectTab('reviews')" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;">Şərh Yazın</a>
+          </p>
+        </div>
+  
+        <div class="action-buttons mt-3">
+          <div class="quantity-wrapper">
+            <label for="quantity" class="quantity-label">Ədəd</label>
+            <input type="number" id="quantity" [(ngModel)]="quantity" class="quantity-input" min="1" max="99" value="1" (input)="checkQuantity()" (change)="checkQuantity()" (keypress)="limitInputLength($event)">
+          </div>
+          <button class="btn btn-primary add-to-cart"   (click)="addToBasket(book.bookId)" >Səbətə at</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="nav nav-tabs mt-4" id="productDetailTab" role="tablist">
+      <button class="nav-link" id="description-tab" (click)="selectTab('description')" [class.active]="activeTab === 'description'" role="tab" aria-controls="description">Kitab Haqqında</button>
+      <button class="nav-link" id="reviews-tab" (click)="selectTab('reviews')" [class.active]="activeTab === 'reviews'" role="tab" aria-controls="reviews" #reviewsSection>Şərhlər ({{ totalReviews }})</button>
+    </div>
+    
+    <div class="tab-content">
+      <div class="tab-pane fade show" [class.active]="activeTab === 'description'" [class.show]="activeTab === 'description'" id="description" role="tabpanel" aria-labelledby="description-tab">
+        <p>{{ book.description }}</p>
+      </div>
+      <div class="tab-pane fade" [class.active]="activeTab === 'reviews'" [class.show]="activeTab === 'reviews'" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+        <app-review [bookId]="book.bookId"></app-review>
+      </div>
+    </div>
+
+    <div class="related-products mt-4">
+      <!-- <h3>Bənzər kitablar</h3> -->
+      <div class="row">
+        <app-related-books *ngIf="book.categoryId !== null" [categoryId]="book.categoryId" [currentBookId]="book.bookId"></app-related-books>
+
+      </div>
+
+      
+    </div>
+  </div>
+<!--   
+  <div *ngIf="!book" class="loading-spinner">
+    <i class="fa fa-spinner fa-spin"></i> Data yüklənir...
+  </div> -->

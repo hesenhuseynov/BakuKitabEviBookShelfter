@@ -1,0 +1,84 @@
+.container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  user-select: none; 
+  font-family: "Montserrat", sans-serif;
+
+}
+h1{
+  font-family: "Montserrat", sans-serif;
+
+}
+
+.container h2 {
+  color: rgb(63, 48, 29);
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1.2;
+  line-height: 1.4;
+  
+}
+.table td {
+  cursor: default; 
+
+ }
+ 
+.table th, .table td {
+  vertical-align: middle;
+  text-align: center; /* Merkezlemek için eklenebilir */
+}
+
+.img-thumbnail {
+  border: none;
+  object-fit: cover;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-warning {
+  background-color: #f0ad4e;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #ec971f;
+}
+
+.btn-danger {
+  background-color: #d9534f;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c9302c;
+}
+
+
+#deleteBook {
+  margin-left: 10px;
+}
+.btn-primary {
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #ec971f;
+  border-color: #ec971f;
+}

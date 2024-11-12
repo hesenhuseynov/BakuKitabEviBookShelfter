@@ -1,0 +1,55 @@
+2024-09-25 00:11:12.378 +04:00 [INF] Server Time: 9/24/2024 8:11:12 PM
+2024-09-25 00:11:12.378 +04:00 [INF] Server Time: 9/24/2024 8:11:12 PM
+2024-09-25 00:11:12.381 +04:00 [INF] Server Time: 9/24/2024 8:11:12 PM
+2024-09-25 00:11:12.381 +04:00 [INF] Server Time: 9/24/2024 8:11:12 PM
+2024-09-25 00:11:12.389 +04:00 [INF] Handling GetAllCategoryQueryRequest
+2024-09-25 00:11:12.389 +04:00 [INF] Handling GetMostViewedBooksQueryRequest
+2024-09-25 00:11:12.389 +04:00 [INF] Handling GetFeaturedBooksQueryRequest
+2024-09-25 00:11:12.389 +04:00 [INF] Handling GetNewArrivalsBooksQueryRequest
+2024-09-25 00:11:12.390 +04:00 [INF] Handling GetAllCategoryQueryRequest
+2024-09-25 00:11:12.390 +04:00 [INF] Handling GetMostViewedBooksQueryRequest
+2024-09-25 00:11:12.391 +04:00 [INF] Handling GetFeaturedBooksQueryRequest
+2024-09-25 00:11:12.393 +04:00 [INF] Handling GetNewArrivalsBooksQueryRequest
+2024-09-25 00:11:12.462 +04:00 [INF] Handled GetAllCategoryQueryRequest
+2024-09-25 00:11:12.463 +04:00 [INF] Handled GetAllCategoryQueryResponse  
+2024-09-25 00:11:12.465 +04:00 [INF] HTTP GET /api/Category/GetAll responded 200 in 76.7184 ms
+2024-09-25 00:11:12.476 +04:00 [INF] Handled GetFeaturedBooksQueryRequest
+2024-09-25 00:11:12.476 +04:00 [INF] Handled GetMostViewedBooksQueryRequest
+2024-09-25 00:11:12.477 +04:00 [INF] Handled GetNewArrivalsBooksQueryRequest
+2024-09-25 00:11:12.477 +04:00 [INF] Handled GetFeaturedBooksQueryResponse  
+2024-09-25 00:11:12.478 +04:00 [INF] Handled GetMostViewedBooksQueryResponse  
+2024-09-25 00:11:12.479 +04:00 [INF] Handled GetNewArrivalsBooksQueryResponse  
+2024-09-25 00:11:12.480 +04:00 [INF] HTTP GET /api/books/featured responded 200 in 92.1629 ms
+2024-09-25 00:11:12.480 +04:00 [INF] HTTP GET /api/books/most-viewed responded 200 in 92.6284 ms
+2024-09-25 00:11:12.481 +04:00 [INF] HTTP GET /api/books/new-arrivals responded 200 in 93.4938 ms
+2024-09-25 04:25:27.293 +04:00 [INF] Server Time: 9/25/2024 12:25:27 AM
+2024-09-25 04:25:27.297 +04:00 [INF] Server Time: 9/25/2024 12:25:27 AM
+2024-09-25 04:25:27.298 +04:00 [INF] Server Time: 9/25/2024 12:25:27 AM
+2024-09-25 04:25:27.298 +04:00 [INF] Server Time: 9/25/2024 12:25:27 AM
+2024-09-25 04:25:27.313 +04:00 [INF] Handling GetMostViewedBooksQueryRequest
+2024-09-25 04:25:27.313 +04:00 [INF] Handling GetAllCategoryQueryRequest
+2024-09-25 04:25:27.313 +04:00 [INF] Handling GetNewArrivalsBooksQueryRequest
+2024-09-25 04:25:27.313 +04:00 [INF] Handling GetFeaturedBooksQueryRequest
+2024-09-25 04:25:27.317 +04:00 [INF] Handling GetFeaturedBooksQueryRequest
+2024-09-25 04:25:27.316 +04:00 [INF] Handling GetAllCategoryQueryRequest
+2024-09-25 04:25:27.316 +04:00 [INF] Handling GetNewArrivalsBooksQueryRequest
+2024-09-25 04:25:27.315 +04:00 [INF] Handling GetMostViewedBooksQueryRequest
+2024-09-25 04:25:27.417 +04:00 [INF] Handled GetAllCategoryQueryRequest
+2024-09-25 04:25:27.419 +04:00 [INF] Handled GetAllCategoryQueryResponse  
+2024-09-25 04:25:27.420 +04:00 [INF] HTTP GET /api/Category/GetAll responded 200 in 107.3323 ms
+2024-09-25 04:25:27.429 +04:00 [INF] Handled GetFeaturedBooksQueryRequest
+2024-09-25 04:25:27.429 +04:00 [INF] Handled GetNewArrivalsBooksQueryRequest
+2024-09-25 04:25:27.430 +04:00 [INF] Handled GetFeaturedBooksQueryResponse  
+2024-09-25 04:25:27.430 +04:00 [INF] Handled GetMostViewedBooksQueryRequest
+2024-09-25 04:25:27.431 +04:00 [INF] Handled GetNewArrivalsBooksQueryResponse  
+2024-09-25 04:25:27.431 +04:00 [INF] HTTP GET /api/books/featured responded 200 in 118.1423 ms
+2024-09-25 04:25:27.432 +04:00 [INF] Handled GetMostViewedBooksQueryResponse  
+2024-09-25 04:25:27.433 +04:00 [INF] HTTP GET /api/books/new-arrivals responded 200 in 120.8979 ms
+2024-09-25 04:25:27.435 +04:00 [INF] HTTP GET /api/books/most-viewed responded 200 in 123.0718 ms
+2024-09-25 16:22:00.576 +04:00 [INF] Server Time: 9/25/2024 12:22:00 PM
+2024-09-25 16:22:00.583 +04:00 [INF] Server Time: 9/25/2024 12:22:00 PM
+2024-09-25 16:22:00.613 +04:00 [INF] Handling GetBooksByCategoryQueryRequest
+2024-09-25 16:22:00.616 +04:00 [INF] Handling GetBooksByCategoryQueryRequest
+2024-09-25 16:22:00.814 +04:00 [INF] Handled GetBooksByCategoryQueryRequest
+2024-09-25 16:22:00.815 +04:00 [INF] Handled GetBooksByCategoryQueryResponse  
+2024-09-25 16:22:00.817 +04:00 [INF] HTTP GET /api/Category/1/books responded 400 in 230.6633 ms

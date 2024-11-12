@@ -1,0 +1,56 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-sm" style="width: 400px;">
+        <h3 class="text-center mb-4">Qeydiyyatdan Keçin </h3>
+            <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+            <div class="form-group mb-3">
+                <input type="text" formControlName="userName" class="form-control" placeholder="Username" required minlength="3">
+                <div *ngIf="registerForm.get('userName')?.invalid && registerForm.get('userName')?.touched" class="text-danger">
+                    İstifadəçi adı ən azı 3 simvol uzunluğunda olmalıdır.
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" formControlName="firstName" class="form-control" placeholder="First Name" required>
+                        <div *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched" class="text-danger">
+                            Ad sahəsi boş qala bilməz.
+                        </div>
+                    </div>
+                    <div class="col">
+                        <input type="text" formControlName="lastName" class="form-control" placeholder="Last Name" required>
+                        <div *ngIf="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched" class="text-danger">
+                            Soyad sahəsi boş qala bilməz.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <input type="email" formControlName="email" class="form-control" placeholder="Email Address" required>
+                <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-danger">
+                    Etibarlı e-poçt ünvanı daxil edin.
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <input type="password" formControlName="password" class="form-control" placeholder="Password" required minlength="6">
+                <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-danger">
+                    Parol ən azı 6 simvol uzunluğunda olmalıdır.
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <input type="password" formControlName="passwordConfirm" class="form-control" placeholder="Confirm Password" required>
+                <div *ngIf="registerForm.errors?.['passwordMismatch'] && registerForm.get('passwordConfirm')?.touched" class="text-danger">
+                    Parollar uyğun gəlmir.
+                </div>
+            </div>
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary">Qeydiyyat</button>
+            </div>
+            <div *ngIf="registrationError" class="alert alert-danger">
+                {{ registrationError }}
+            </div>
+            <div *ngIf="registrationSuccess" class="alert alert-success">
+                {{ registrationSuccess }}
+            </div>
+        </form>
+    </div>
+</div>

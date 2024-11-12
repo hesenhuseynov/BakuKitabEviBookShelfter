@@ -1,0 +1,27 @@
+/* .carousel-item img {
+    height: 360px;
+    object-fit: contain; 
+    width: 100%; 
+} */
+.carousel-container {
+    background-color: #f8f9fa; 
+}
+
+.carousel-item img {
+    height: 330px; 
+    object-fit: cover;
+    width: 100%; 
+    margin-top: 17px;
+    border-radius: 10px;
+    filter: brightness(0.8); 
+    transition: filter 0.5s ease; 
+}
+
+.carousel-item img:hover {
+    filter: brightness(1); 
+}
+
+.carousel-inner {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px;
+}

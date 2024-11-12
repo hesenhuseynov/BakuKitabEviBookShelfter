@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <SonarQubeExclude>True</SonarQubeExclude>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Features\Commands\Book\UpdateProduct\**" />
+      <EmbeddedResource Remove="Features\Commands\Book\UpdateProduct\**" />
+      <None Remove="Features\Commands\Book\UpdateProduct\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BookShelfter.Domain\BookShelfter.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Abstractions\Services\Configurations\" />
+      <Folder Include="Features\Commands\Role\UpdateRole\" />
+      <Folder Include="Validators\Books\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="BouncyCastle.Cryptography" Version="2.4.0" />
+      <PackageReference Include="Castle.Core" Version="5.1.1" />
+      <PackageReference Include="FluentValidation" Version="11.9.0" />
+      <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+      <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.0" />
+      <PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" />
+      <PackageReference Include="MediatR" Version="11.1.0" />
+      <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.16" />
+      <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+      <PackageReference Include="Microsoft.TestPlatform.TestHost" Version="17.8.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="Serilog" Version="4.0.1" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,8 @@
+<div class="category-menu">
+
+  <ul class="category-list">
+    <li *ngFor="let category of categories">
+      <a href="/categories/{{ category.categoryId }}/books">{{ category.categoryName }}</a>
+    </li>
+  </ul>
+</div>

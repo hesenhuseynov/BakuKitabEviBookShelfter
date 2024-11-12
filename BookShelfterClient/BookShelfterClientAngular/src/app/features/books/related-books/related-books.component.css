@@ -1,0 +1,70 @@
+.related-products {
+  margin-top: 20px;
+  text-align: center; 
+  margin-bottom: 32px;
+}
+
+.related-products h3 {
+  border-bottom: 2px solid #c0cbd8;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: #606366;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.book-list {
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.book-item {
+  max-width: 200px; 
+  flex: 1;
+  text-align: center;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+
+}
+
+.card:hover {
+  transform: scale(1.05); 
+}
+
+.card-img-top {
+  width: 100%;
+  height: 250px;
+  margin-top: 20px;
+  margin-left: 2px;
+  object-fit: contain; 
+}
+
+.card-title {
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 1rem;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+.card-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-title a:hover {
+  text-decoration: underline;
+}
+
+.card-text {
+  font-size: 0.875rem;
+  color: #555;
+}

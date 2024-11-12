@@ -1,0 +1,47 @@
+<div class="container my-5" *ngIf="basket">
+    <h2>Sifariş Ver</h2>
+    
+    <div class="card mb-3" *ngFor="let item of basket.items">
+      <div class="card-body">
+        <h5>{{item.productName}} ({{item.quantity}} ədəd)</h5>
+        <p>Qiymət: {{item.price | currency}}</p>
+        <p>Total: {{item.totalPrice | currency}}</p>
+      </div>
+    </div>
+  
+    <div class="card-body">
+      <label for="deliveryAddress">Təslimat Adresi</label>
+      <input id="deliveryAddress" [(ngModel)]="deliveryAddress" class="form-control" placeholder="Teslimat adresini daxil edin" required>
+      <div *ngIf="!deliveryAddress && formSubmitted" class="text-danger">
+       Təslimat adressi məcburidir
+      </div>
+    </div>
+  
+    <div class="card-body">
+      <label for="phoneNumber">Telefon nömrəsi</label>
+      <input id="phoneNumber" [(ngModel)]="phoneNumber" class="form-control" placeholder="Telefon  nömrəsini daxil edin" required>
+      <div *ngIf="!phoneNumber && formSubmitted" class="text-danger">
+     Telefon nömrəsi məcburidir
+      </div>
+    </div>
+  
+    <div class="card-body">
+      <label for="paymentMethod">Ödəmə üsulu</label>
+      <select id="paymentMethod" [(ngModel)]="paymentMethod" class="form-control" required>
+        <option value="" disabled>Bir ödəmə üsulu seçin</option>
+        <option value="CashOnDelivery">Qapıda ödəmə</option>
+      </select>
+      <div *ngIf="!paymentMethod && formSubmitted" class="text-danger">
+        Ödəmə üsulu seçmək məcburdiri
+      </div>
+    </div>
+  
+    <div class="card-footer">
+      <h4>Umumi Toplam: {{basket.total | currency}}</h4>
+      <button class="btn btn-success w-100" (click)="confirmOrder()">Sifarişi  təsdiqlə</button>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+    </div>
+</div>

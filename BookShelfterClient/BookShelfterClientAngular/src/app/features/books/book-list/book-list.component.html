@@ -1,0 +1,42 @@
+<div class="container my-4" *ngIf="books && books.length > 0">
+  <div class="row mt-3">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let book of books">
+      <div class="card">
+        <img *ngIf="book.imageUrls && book.imageUrls.length > 0" [src]="book.imageUrls[0]" class="card-img-top" alt="{{ book.bookName }}">
+        <div class="card-body text-center">
+          <h5 class="card-title">
+            <a href="/books/{{ book.bookId }}" class="text-dark">{{ book.bookName }}</a>
+            
+          </h5>
+          <h6 class="text-muted">{{ book.authorName }}</h6>
+          <p class="card-text">₼{{ book.price }}</p>
+          <div class="card-buttons mt-3">
+            <button class="icon-btn icon-cart" 
+             (click)="addToBasket(book.bookId)"  
+            data-tooltip="Səbətə Əlavə et"></button>
+            <button class="icon-btn icon-eye" data-tooltip="Detayları Gör"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-12 text-center">
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center">
+        <li class="page-item" [class.disabled]="pageNumber === 1">
+          <a class="page-link" (click)="previousPage()">Öncəki</a>
+        </li>
+        <li class="page-item">
+          <span class="page-link">Səhifə {{ pageNumber }}</span>
+        </li>
+        <li class="page-item" [class.disabled]="pageNumber * pageSize >= totalProductCount">
+          <a class="page-link" (click)="nextPage()">Sonrakı</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+

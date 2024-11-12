@@ -1,0 +1,17 @@
+2024-09-30 23:17:04.419 +04:00 [INF] Server Time: 9/30/2024 7:17:04 PM
+2024-09-30 23:17:05.244 +04:00 [INF] Server Time: 9/30/2024 7:17:05 PM
+2024-09-30 23:17:06.322 +04:00 [INF] Server Time: 9/30/2024 7:17:06 PM
+2024-09-30 23:17:06.329 +04:00 [INF] Server Time: 9/30/2024 7:17:06 PM
+2024-09-30 23:17:06.324 +04:00 [INF] Server Time: 9/30/2024 7:17:06 PM
+2024-09-30 23:17:08.814 +04:00 [INF] Server Time: 9/30/2024 7:17:08 PM
+2024-09-30 23:17:08.984 +04:00 [INF] Server Time: 9/30/2024 7:17:08 PM
+2024-09-30 23:17:26.598 +04:00 [INF] Server Time: 9/30/2024 7:17:26 PM
+2024-09-30 23:17:26.622 +04:00 [WRN] Failed to determine the https port for redirect.
+2024-09-30 23:17:26.912 +04:00 [INF] Handling GetAllBookQueryRequest
+2024-09-30 23:17:26.923 +04:00 [INF] Handling GetAllBookQueryRequest
+2024-09-30 23:17:29.770 +04:00 [WRN] No store type was specified for the decimal property 'UnitPrice' on entity type 'BasketItem'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 23:17:29.775 +04:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Book'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 23:17:29.779 +04:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'InvoiceFile'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-09-30 23:17:33.155 +04:00 [INF] Handled GetAllBookQueryRequest
+2024-09-30 23:17:33.165 +04:00 [INF] Handled GetAllBookQueryResponse  
+2024-09-30 23:17:33.305 +04:00 [INF] HTTP GET /api/Books responded 200 in 6576.0051 ms

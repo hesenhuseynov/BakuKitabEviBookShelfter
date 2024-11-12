@@ -1,0 +1,48 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-sm" style="width: 400px;">
+        <h3 class="text-center mb-4">Daxil ol</h3>
+        <div class="d-grid gap-2 mb-3">
+            <!-- <button class="btn btn-primary">
+                <i class="fab fa-facebook-f me-2"></i>Facebook ilə daxil ol
+            </button> -->
+            <button class="btn btn-danger" (click)="googleLogin()"> <!-- Fonksiyonu buraya bağladık -->
+                <i class="fab fa-google me-2"></i> Google ilə daxil ol
+            </button>
+        </div>
+        <div class="text-center mb-3">Vəya</div>
+
+        <form (ngSubmit)="onLogin()">
+            <div *ngIf="loginError" class="alert alert-danger">
+                {{ loginError }}
+            </div>
+            <div class="form-group mb-3">
+                <label for="email"> Username</label>
+                <input type="email" [(ngModel)]="email" name="email" class="form-control" id="email" placeholder="Enter username">
+                <div *ngIf="validationErrors.includes('Email zəruridir')" class="text-danger">
+                    Nicnkname zəruridir
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="password">Şifrə</label>
+                <input type="password" [(ngModel)]="password" name="password" class="form-control" id="password" placeholder="Enter password">
+                <div *ngIf="validationErrors.includes('Şifrə gərəylidir')" class="text-danger">
+                    Şifrə gərəylidir
+                </div>
+                <div *ngIf="validationErrors.includes('Şifrə ən az 6 hərf olmalıdır')" class="text-danger">
+                    Şifrə ən az 6 hərf olmalıdır
+                </div>
+            </div>
+            <div class="d-grid mb-3"> 
+                <button type="submit" class="btn btn-success">Daxil ol</button>
+            </div>
+            <div class="text-center mb-3">
+                <a href="#" class="text-muted">Forgot password?</a>
+            </div>
+        </form>
+
+        <hr>
+        <div class="text-center"> 
+            <a href="/register"  class="btn btn-link"   >Qeydiyyatdan Keç</a>
+        </div>
+    </div>
+</div>

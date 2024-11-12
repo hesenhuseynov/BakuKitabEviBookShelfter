@@ -1,0 +1,118 @@
+.container {
+    max-width: 300px; /* Kategori bölümü için genişlik ayarı */
+    margin-right: 20px; /* Sağdaki içerik bölümüyle boşluk */
+  }
+  
+  .container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+
+  }
+  
+  .container ul li {
+    margin-bottom: 10px;
+    
+
+  }
+  
+  .container ul li a {
+    font-family: "Montserrat", sans-serif;
+
+    color: #6AA846;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+  }
+  
+  .container ul li a:hover {
+    background-color: #f8f8f8;
+    color: #0084ff;
+  }
+  
+  .container ul li a.active {
+    background-color: #e0e0e0; 
+    color: #333;
+  }
+  
+  .content {
+    margin-left: 120px; 
+  }
+/* Kategori menüsü genel yapı */
+.category-menu {
+    position: relative;
+    width: 250px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .category-btn {
+    width: 100%;
+    background-color: #f8f8f8;
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px 15px;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .category-btn i {
+    margin-right: 10px;
+  }
+  
+  .category-list {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .category-list li {
+    border-top: 1px solid #ddd;
+  }
+  
+  .category-list li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .category-list li a:hover {
+    background-color: #f1f1f1;
+    color: #007bff;
+  }
+  
+  .category-list li:last-child {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      max-width: 100%; /* Mobilde kategori bölümünün tam genişlikte olmasını sağlar */
+      margin-right: 0;
+    }
+  
+    .content {
+      margin-left: 0;
+    }
+  }
+  

@@ -1,0 +1,47 @@
+body {
+    background-color: #f8f9fa;
+
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+h3{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 450;
+    color: black;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+.btn-primary, .btn-danger {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.btn-success {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.text-muted {
+    font-size: 14px;
+}
+
+.btn-link {
+    font-size: 16px;
+    color: #007bff;
+}
+.text-danger {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\User\Desktop\BookShelfterECommerce\BookShelfter\Presentation\BookShelfter.API\bin\Release\net8.0\publish\</_PublishTargetUrl>
+    <History>True|2024-11-10T13:53:27.2025057Z||;True|2024-11-10T17:40:13.1882947+04:00||;True|2024-11-10T17:13:04.0961500+04:00||;True|2024-11-10T17:08:26.0551316+04:00||;True|2024-11-10T16:55:58.0826999+04:00||;True|2024-10-30T14:39:59.6472048+04:00||;True|2024-10-30T12:06:40.3170326+04:00||;True|2024-10-23T15:56:40.8789777+04:00||;True|2024-10-23T14:05:12.9231460+04:00||;True|2024-10-23T14:04:22.6372858+04:00||;True|2024-10-23T14:03:49.1970289+04:00||;True|2024-10-19T14:31:33.6230805+04:00||;True|2024-10-19T14:29:27.9922777+04:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

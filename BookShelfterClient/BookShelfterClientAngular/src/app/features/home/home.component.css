@@ -1,0 +1,191 @@
+.nav-tabs .nav-link {
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  position: relative;
+  padding-bottom: 15px;
+  font-size: 17px;
+  color: #797c93;
+  line-height:38px;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+#productTabContent {
+  margin-top: 35px;
+  border-bottom: 2px;
+}
+
+body, .card-title, .card-text {
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: #f0f0f0;
+  border-color: #6AA846;
+  color: #6AA846;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: white;
+  border-color: #6AA846;
+  color: #6AA846;
+}
+
+
+.card {
+  border: none;
+  margin-top: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: #f8f9fa;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  cursor: pointer;
+  padding: 10px; 
+  margin: auto; 
+  user-select: none; 
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 16px; 
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-family: "Montserrat", sans-serif;
+
+}
+
+.text-muted {
+  font-size: 14px; 
+  color: #777;
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+
+}
+
+.card-text {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.card-img-top {
+  height: 230px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  
+}
+
+.badge {
+  font-size: 14px;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-buttons .icon-btn {
+  background-color: transparent;
+  font-family: "Montserrat", sans-serif;
+
+  position: relative;
+  border: none;
+  cursor: pointer;
+  font-size: 20px; 
+  color: #6AA846;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+
+.card-buttons .icon-btn:hover {
+  color: #4c8033;
+  transform: translateY(-2px);
+} 
+
+.icon-cart::before {
+  content: "\f217";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.icon-details::before {
+  content: "\f05a";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+
+.card-buttons .icon-btn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 110%;     
+  left: 50%;         
+  transform: translateX(-50%);
+  background-color: #384332;
+  color: white;
+  padding: 4px 8px; 
+  border-radius: 3px; 
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+
+.card-buttons .icon-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-37%, 8px);
+
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.container.my-4 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.row.mt-3 {
+  margin-top: 1rem;
+  
+}
+
+.arrow-icon{
+  position: absolute;
+  /* left: calc(50%-10px); */ 
+  display: block;
+  opacity: 1;
+}
+
+.arrow-icon::after{
+  position: absolute;
+  content: "";
+  border-width: 13px 10px;
+  border-style: solid;
+  left: 2px;
+  border-color: #fff transparent transparent transparent;
+  top: -2px;
+}

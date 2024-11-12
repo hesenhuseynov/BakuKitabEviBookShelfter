@@ -1,0 +1,14 @@
+.user-panel {
+    padding: 20px;
+  }
+  
+  .user-panel nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .user-panel nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  

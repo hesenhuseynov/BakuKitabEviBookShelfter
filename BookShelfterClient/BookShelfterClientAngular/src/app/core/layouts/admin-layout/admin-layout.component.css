@@ -1,0 +1,98 @@
+/* Wrapper */
+#wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Content Wrapper */
+#content-wrapper {
+  flex: 1;
+  margin-left: 250px; /* Yan menünün genişliği kadar boşluk bırak */
+  padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: #343a40; /* Koyu gri arka plan */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge ekliyoruz */
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-bottom: none; 
+}
+
+/* Navbar Brand */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar-brand i {
+  margin-right: 10px; /* İkon ve yazı arasında boşluk */
+}
+
+/* Navbar Nav */
+.navbar-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar Items */
+.nav-item .nav-link {
+  color: white;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item .nav-link i {
+  margin-right: 5px; /* İkon ve yazı arasında boşluk */
+}
+
+.nav-item .nav-link:hover {
+  color: #007bff; /* Hover rengini değiştirebiliriz */
+  text-decoration: underline; /* Altını çizerek belirginleştiriyoruz */
+}
+
+/* Container Margin */
+.container-fluid {
+  margin-top: 60px; /* Navbar yüksekliği kadar boşluk bırak */
+}
+
+/* Sidebar */
+#sidebar-wrapper {
+  min-width: 250px;
+  max-width: 250px;
+  background-color: #343a40;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  transition: all 0.3s;
+}
+
+/* Sidebar Items */
+.list-group-item {
+  border: none;
+  padding: 20px;
+  color: #fff;
+}
+
+.list-group-item:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Search Box */
+.search-box {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  margin-right: 20px;
+}

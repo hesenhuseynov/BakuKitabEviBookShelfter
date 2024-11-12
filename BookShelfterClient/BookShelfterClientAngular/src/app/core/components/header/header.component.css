@@ -1,0 +1,275 @@
+.header-actions {
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  gap: 10px; 
+  width: 100%; 
+  box-sizing: border-box; 
+}
+@media (max-width: 768px) {
+  .header-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .browse-categories,
+  .search-bar,
+  .user-options {
+    width: 100%; 
+    margin-bottom: 10px; 
+  }
+
+  .search-bar input {
+    width: 100%;
+    margin-bottom: 10px; 
+  }
+}
+
+p{
+  font-family: "Montserrat", sans-serif;
+
+}
+
+.browse-categories .btn {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.search-bar input {
+  font-family: "Montserrat", sans-serif;
+
+  width: 300px;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  font-family: "Montserrat", sans-serif;
+  width: 100px;
+  background-color: #6AA846;
+  color: white;
+}
+
+.user-options .login-register a {
+  font-family: "Montserrat", sans-serif;
+
+  margin-right: 5px;
+}
+
+.shopping-cart {
+  position: relative;
+  cursor: pointer;  font-family: "Montserrat", sans-serif;
+
+}
+
+.shopping-cart .cart-amount {
+  color: #6AA846;
+  font-weight: bold;
+}
+
+.shopping-cart .badge {
+  font-size: 14px;
+}
+
+.dropdown-menu {
+  width: 280px; 
+  left: 0;
+  top: 100%;
+  margin-top: 0;
+  border-radius: 0;
+  padding: 10px 20px;
+}
+
+.dropdown-menu li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu li a {
+  color: #333;
+  font-weight: bold;
+  text-decoration: none; 
+  display: block;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f8f8f8;
+  color: #007bff;
+}
+
+.shopping-cart .dropdown-menu {
+  top: 100%;
+  right: 0;
+  width: 250px;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  display: none;
+}
+
+.shopping-cart:hover .dropdown-menu {
+  display: block;
+}
+
+.basket-item-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.basket-item-details {
+  flex-grow: 1;
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-sm:hover {
+  background-color: #c82333;
+}
+
+.summary {
+  padding: 10px 15px;
+  border-top: 1px solid #e0e0e0;
+  text-align: right;
+}
+
+.carousel-inner {
+  background-color: #f4f4f4;
+  padding: 40px 0;
+}
+
+.carousel-item {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.carousel-item .container {
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-item img {
+  max-width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.carousel-indicators button {
+  width: 15px;
+  height: 15px;
+  background-color: #6AA846;
+  border: none;
+  border-radius: 50%;
+}
+
+.carousel-indicators .active {
+  background-color: #2d5a27;
+}
+
+@media (max-width: 768px) {
+  .basket-item-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .basket-item-details p {
+    font-size: 14px;
+  }
+
+  .shopping-cart .dropdown-menu {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+}
+.shopping-cart .dropdown-menu {
+  max-width: 300px; 
+  right: 0;
+  left: auto; 
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ddd;
+  overflow-y: auto; 
+}
+.basket-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.basket-item-image {
+  width: 60px; 
+  height: 60px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.basket-item-details p {
+  margin: 0;
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  margin-left: 10px;
+  background-color: #dc3545; 
+  color: white;
+}
+.summary {
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.summary .btn {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #6AA846; 
+  color: white;
+  font-weight: bold;
+}
+.shopping-cart:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+@media (max-width: 768px) {
+  .shopping-cart .dropdown-menu {
+    width: 100%; 
+    left: 0;
+    right: 0;
+  }
+
+  .basket-item-image {
+    width: 50px; 
+    height: 50px;
+  }
+
+  .basket-item-details p {
+    font-size: 12px; 
+  }
+}

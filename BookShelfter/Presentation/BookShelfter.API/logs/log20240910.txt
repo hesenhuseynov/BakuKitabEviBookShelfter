@@ -1,0 +1,14 @@
+2024-09-10 16:51:36.164 +04:00 [INF] Server Time: 09/10/2024 12:51:36
+2024-09-10 16:51:37.368 +04:00 [INF] Server Time: 09/10/2024 12:51:37
+2024-09-10 16:52:00.735 +04:00 [INF] Server Time: 09/10/2024 12:52:00
+2024-09-10 16:52:00.745 +04:00 [WRN] Failed to determine the https port for redirect.
+2024-09-10 16:52:00.920 +04:00 [INF] Handling GetAllBookQueryRequest
+2024-09-10 16:52:00.928 +04:00 [INF] Handling GetAllBookQueryRequest
+2024-09-10 16:52:03.943 +04:00 [INF] Handled GetAllBookQueryRequest
+2024-09-10 16:52:03.944 +04:00 [INF] Handled GetAllBookQueryResponse  
+2024-09-10 16:52:04.000 +04:00 [INF] HTTP GET /api/Books responded 200 in 3192.0315 ms
+2024-09-10 16:59:45.325 +04:00 [INF] Server Time: 09/10/2024 12:59:45
+2024-09-10 16:59:45.748 +04:00 [INF] Server Time: 09/10/2024 12:59:45
+2024-09-10 16:59:45.762 +04:00 [INF] Server Time: 09/10/2024 12:59:45
+2024-09-10 16:59:51.720 +04:00 [INF] Server Time: 09/10/2024 12:59:51
+2024-09-10 16:59:51.889 +04:00 [INF] Server Time: 09/10/2024 12:59:51

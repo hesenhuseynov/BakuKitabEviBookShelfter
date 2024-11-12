@@ -1,0 +1,43 @@
+
+.card{
+  font-family: "Montserrat", sans-serif;
+
+}
+.card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .fa-shopping-card{
+    color: #760707;
+  }
+  .btn-outline-danger{
+    margin-left: 3px;
+    font-family: "Montserrat", sans-serif;
+  }
+  .card-body .btn {
+    width: 32px;
+    height: 32px;
+    line-height: 1;
+    font-size: 1rem;
+    border-radius: 50%;
+  }
+  
+  .btn-outline-danger {
+    color: #dc3545;
+  }
+  
+  .btn-outline-danger:hover {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+
+#send-order{
+  color: rgb(9, 248, 89);
+  background-color: blueviolet;
+}
