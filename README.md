@@ -1,7 +1,12 @@
 #  BakuKitabevi - E-Commerce Platform 📚
 
 ## Key Features
-
+BakuKitabevi is a modern e-commerce platform designed to manage and sell books online. The platform provides features like:
+User Authentication via Google OAuth 2.0.
+Book Management with CRUD operations.
+Order Management and payment integrations(not yet ).
+Scalable cloud infrastructure with Google Cloud.
+Built using ASP.NET Core 8, this platform is designed for scalability, maintainability, and high performance. It follows best practices like Clean Architecture, CQRS, and MediatR to ensure flexibility and ease of maintenance as the platform grows.
 - **🚀 ASP.NET Core 8**: Leveraging the latest .NET technologies for optimal performance and security.
 - **⚙️ CQRS & MediatR**: Implements **CQRS** for separating command and query operations, using **MediatR** to decouple components and improve performance.
 - **🛡️ FluentValidation**: Ensures all input and models are validated consistently with **FluentValidation**, making validation logic reusable and maintainable.
