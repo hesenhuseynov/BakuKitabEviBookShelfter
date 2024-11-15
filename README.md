@@ -1,6 +1,6 @@
-# 🛍️ BakuKitabevi - E-Commerce Platform 📚
+#  BakuKitabevi - E-Commerce Platform 📚
 
-## ✨ Key Features
+## Key Features
 
 - **🚀 ASP.NET Core 8**: Leveraging the latest .NET technologies for optimal performance and security.
 - **⚙️ CQRS & MediatR**: Implements **CQRS** for separating command and query operations, using **MediatR** to decouple components and improve performance.
