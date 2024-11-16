@@ -25,7 +25,6 @@ The following technologies and libraries are utilized in this project:
 - **FluentValidation**: A library for input validation, ensuring consistent and maintainable validation logic across the project.
 - **Google Cloud**: Cloud platform for scalable infrastructure, offering services for storage, computing, and other cloud-based solutions.
 - **Serilog**: A structured logging library for centralized logging and monitoring of the application's runtime behavior.
-- **Swagger**: A tool for API documentation, providing an interactive interface for exploring and testing the API endpoints.
 - **Google OAuth 2.0**: A secure user authentication protocol using Google’s OAuth 2.0 for seamless sign-in and authorization.
 - **JWT (JSON Web Tokens)**: For secure token-based authentication and authorization between the server and client.
   ## 🛠️ Project Setup
