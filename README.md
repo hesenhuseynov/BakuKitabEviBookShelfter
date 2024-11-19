@@ -27,16 +27,5 @@ The following technologies and libraries are utilized in this project:
 - **Serilog**: A structured logging library for centralized logging and monitoring of the application's runtime behavior.
 - **Google OAuth 2.0**: A secure user authentication protocol using Google’s OAuth 2.0 for seamless sign-in and authorization.
 - **JWT (JSON Web Tokens)**: For secure token-based authentication and authorization between the server and client.
-  ## 🛠️ Project Setup
-
-To get the project up and running locally, follow these steps:
-
-### Prerequisites
-Before you begin, ensure you have the following installed:
-
-- **.NET 8 SDK**: The latest version of the .NET SDK for building and running the application.
-- **SQL Server** (or another compatible database): Required for database storage and operations.
-- **Google Cloud account**: You'll need a Google Cloud account for integrating cloud services like storage, authentication, etc.
-
 
 
