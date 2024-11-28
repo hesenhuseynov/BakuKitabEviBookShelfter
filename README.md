@@ -3,7 +3,7 @@
 
 ## Backend Hosting Expired
 
-The hosting period for the backend has expired, and the server is currently unavailable. We are working on renewing the hosting or migrating to a new provider.
+The hosting period for the backend of this project has expired, and the server is temporarily unavailable. I am actively working on renewing the hosting or transitioning to a new provider. I appreciate your patience while I resolve this issue.
 
 
 ## Key Features
