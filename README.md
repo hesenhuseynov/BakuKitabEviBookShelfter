@@ -1,6 +1,11 @@
 #  BakuKitabevi - E-Commerce Platform 📚
 ![Screenshot 2024-11-28 092555](https://github.com/user-attachments/assets/e2e2b11a-ed0c-447c-92c0-9aa2e1b8ee07)
 
+## Backend Hosting Expired
+
+The hosting period for the backend has expired, and the server is currently unavailable. We are working on renewing the hosting or migrating to a new provider.
+
+
 ## Key Features
 BakuKitabevi is a modern e-commerce platform designed to manage and sell books online. The platform provides features like:
 User Authentication via Google OAuth 2.0.
