@@ -3,7 +3,7 @@
 
 ## Backend Hosting Expired
 
-The hosting period for the backend of this project has expired, and as a result, the server is temporarily unavailable. Currently, only the frontend is functional and hosted on Firebase. The single backend API was previously hosted on SmartASP.NET, which has expired. I am actively working on renewing the hosting or transitioning to a new provider. Thank you for your understanding and patience as I work to resolve this issue.
+The hosting period for the backend of this project has expired, and as a result, the server is temporarily unavailable. Currently, only the frontend is functional and hosted on Firebase. The single backend API was previously hosted on SmartASP.NET, which has expired. I am actively working on renewing the hosting or transitioning to a new provider. Thank you for your understanding and patience as I work to resolve this issue.(www.bakukitabevi.com)
 
 
 
