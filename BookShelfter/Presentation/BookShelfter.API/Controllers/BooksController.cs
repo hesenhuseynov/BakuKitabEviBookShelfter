@@ -27,21 +27,12 @@ namespace BookShelfter.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-
-//[EnableRateLimiting("Basic")]
+[Authorize(AuthenticationSchemes = "Bearer")] // Bütün metodlar default qorunur
 public class BooksController(IMediator mediator, ILogger<BooksController> logger) : ControllerBase
 {
     private readonly ILogger<BooksController> _logger = logger;
 
-
-
-    //[HttpPost("create-and-upload")]
-    //public async Task<IActionResult> CreateBookWithImage([FromForm] CreateBookWithImageCommandRequest request)
-    //{
-    //    CreateBookWithImageCommandResponse response = await _mediator.Send(request);
-    //    return Ok(response);
-    //}
-
+    [AllowAnonymous]
     [HttpGet("search")]
     public async Task<IActionResult> SearchBooks([FromQuery] string keyword)
     {
@@ -49,235 +40,128 @@ public class BooksController(IMediator mediator, ILogger<BooksController> logger
         var result = await mediator.Send(query);
         return Ok(result);
     }
-        
 
+    [AllowAnonymous]
     [HttpGet("new-arrivals")]
-    public async Task<IActionResult> GetNewArrivalsBooks([FromQuery] GetNewArrivalsBooksQueryRequest getNewArrivalsBooksQuery)
-    {
-        var response = await mediator.Send(getNewArrivalsBooksQuery);
+    public async Task<IActionResult> GetNewArrivalsBooks([FromQuery] GetNewArrivalsBooksQueryRequest query)
+        => Ok(await mediator.Send(query));
 
-        return Ok(response);
-    }
-
-
+    [AllowAnonymous]
     [HttpGet("featured")]
-    public async Task<IActionResult> GetFeaturedBooks([FromQuery] GetFeaturedBooksQueryRequest getFeaturedBooksQuery)
-    {
-        var response = await mediator.Send(getFeaturedBooksQuery);
-        return Ok(response);
-    }
+    public async Task<IActionResult> GetFeaturedBooks([FromQuery] GetFeaturedBooksQueryRequest query)
+        => Ok(await mediator.Send(query));
 
-
-
+    [AllowAnonymous]
     [HttpGet("most-viewed")]
-    public async Task<IActionResult> GetMostViewedBooks([FromQuery] GetMostViewedBooksQueryRequest getMostViewedBooksQuery)
-    {
-        var response = await mediator.Send(getMostViewedBooksQuery);
-        return Ok(response);
-        
-    }
+    public async Task<IActionResult> GetMostViewedBooks([FromQuery] GetMostViewedBooksQueryRequest query)
+        => Ok(await mediator.Send(query));
 
-
-
-
-    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+    [AllowAnonymous]
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] GetAllBookQueryRequest getAllBookQueryRequest)
-    {
-        GetAllBookQueryResponse response = await mediator.Send(getAllBookQueryRequest);
-        return Ok(response);
+    public async Task<IActionResult> GetAll([FromQuery] GetAllBookQueryRequest query)
+        => Ok(await mediator.Send(query));
 
-    }
-
-
-
+    [AllowAnonymous]
     [HttpGet("{Id}")]
-    public async Task<IActionResult> GetById([FromRoute] GetByIdBookQueryRequest getByIdBookQueryRequest)
-    {
-        GetByIdBookQueryResponse response = await mediator.Send(getByIdBookQueryRequest);
+    public async Task<IActionResult> GetById([FromRoute] GetByIdBookQueryRequest query)
+        => Ok(await mediator.Send(query));
 
-        return Ok(response);
-
-    }
-
-
-
-
+    [Authorize(Roles = "Admin")]
     [HttpPost]
-    public async Task<IActionResult> CreateBook([FromBody] CreateBookCommandRequest bookCommandRequest)
+    public async Task<IActionResult> CreateBook([FromBody] CreateBookCommandRequest request)
     {
-
-        logger.LogInformation("Created Endpoint called");
-        CreateBookCommandResponse response = await mediator.Send(bookCommandRequest);
-
+        _logger.LogInformation("Creating book...");
+        var response = await mediator.Send(request);
         if (!response.Success)
         {
-            logger.LogWarning("Failed to create book. Reason: {Reason}", response.Message);
+            _logger.LogWarning("Failed to create book: {Reason}", response.Message);
             return BadRequest(response);
         }
-
-        _logger.LogInformation("Book created successfully.");
-
+        _logger.LogInformation("Book created.");
         return Ok(response);
-
     }
 
-
+    [Authorize(Roles = "Admin")]
     [HttpPut("updateBook")]
-    public async  Task<IActionResult> UpdateBook( [FromBody] UpdateBookCommandRequest request)
+    public async Task<IActionResult> UpdateBook([FromBody] UpdateBookCommandRequest request)
     {
-
-        var response = await  mediator.Send(request);
-
-         if(response.Success)
-              return Ok(response);
-
-
-        
-         return BadRequest(response);
-
-
+        var response = await mediator.Send(request);
+        return response.Success ? Ok(response) : BadRequest(response);
     }
 
-
-
+    [Authorize(Roles = "Admin")]
     [HttpPost("mark-as-featured")]
     public async Task<IActionResult> MarkAsFeatured([FromBody] MarkBookAsFeaturedCommandRequest request)
     {
-        var response=await mediator.Send(request);
-        if (response.IsSuccess)
-        {
-            return Ok(response);
-        }
-
-        return BadRequest(response);
-
+        var response = await mediator.Send(request);
+        return response.IsSuccess ? Ok(response) : BadRequest(response);
     }
-
 
     [HttpPost("incremenet-view-count")]
     public async Task<IActionResult> InCrementViewCount([FromBody] IncrementBookViewCountCommandRequest request)
     {
-         var response =await mediator.Send(request);
-         if (response.IsSuccess)
-         {
-             return Ok(response);
-         }
-
-         return BadRequest();
-
+        var response = await mediator.Send(request);
+        return response.IsSuccess ? Ok(response) : BadRequest();
     }
 
-
-
-
-
-    // [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     [HttpDelete("{id}")]
-
     public async Task<IActionResult> RemoveById([FromRoute] int id)
     {
-
-        logger.LogInformation("Received request to delete book with id: {Id}", id);
-
-
+        _logger.LogInformation("Deleting book {Id}", id);
         var request = new RemoveProductCommandRequest { Id = id };
-        RemoveProductCommandResponse response = await mediator.Send(request);
-
-        if (!response.Success)  
-        {
-            logger.LogWarning("Failed to delete book with id: {Id}. Reason: {Reason}", id, response.Message);
-
-            return BadRequest(response);
-        }
-        logger.LogInformation("Successfully deleted book with id: {Id}", id);
-
-        return Ok(response);
-
+        var response = await mediator.Send(request);
+        return response.Success ? Ok(response) : BadRequest(response);
     }
 
-
-    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     [HttpPost("uploadBookImage")]
     public async Task<IActionResult> UploadBookImage(IFormFile? file, [FromForm] int bookId)
     {
-
         if (file == null || file.Length == 0)
             return BadRequest("No File uploaded");
 
         var command = new UploadBookImageCommandRequest(bookId, file);
         var response = await mediator.Send(command);
-        if (response.Success)
-        {
-            return Ok(new { Message = response.Message, ImageUrl = response.ImageUrl });
-        }
 
-        return BadRequest(new { Message = response.Message });
-        
+        return response.Success
+            ? Ok(new { response.Message, response.ImageUrl })
+            : BadRequest(new { response.Message });
     }
 
-
-    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     [HttpDelete("deleteImage")]
     public async Task<IActionResult> DeleteImage([FromQuery] string imageUrl)
     {
         if (string.IsNullOrEmpty(imageUrl))
-            return BadRequest("No  image Url provided");
+            return BadRequest("No image Url provided");
 
         var command = new RemoveBookImageCommandRequest(imageUrl);
         var response = await mediator.Send(command);
 
-        if (response.Success)
-            return Ok(new { Message = response.Message });
-
-        return BadRequest(new { Message = response.Message });
-
+        return response.Success
+            ? Ok(new { response.Message })
+            : BadRequest(new { response.Message });
     }
 
-
-
+    [AllowAnonymous]
     [HttpGet("{bookId}/details")]
-    public async Task<IActionResult> GetBookDetails( [FromRoute]int bookId)
+    public async Task<IActionResult> GetBookDetails([FromRoute] int bookId)
     {
         var request = new GetBookDetailsQueryRequest { BookId = bookId };
-        var response= await mediator.Send(request);
-
-        if (response.Success)
-        {
-            return Ok(response);
-        }
-
-        return NotFound(response); 
-
+        var response = await mediator.Send(request);
+        return response.Success ? Ok(response) : NotFound(response);
     }
 
-
-
-
+    [AllowAnonymous]
     [HttpGet("related/{categoryId}")]
-
-    public  async Task<IActionResult> GetRelatedBooksByCategory([FromRoute]   int categoryId  )
+    public async Task<IActionResult> GetRelatedBooksByCategory([FromRoute] int categoryId)
     {
-
         var request = new GetRelatedBooksByCategoryQueryRequest { CategoryId = categoryId };
-        var response = await  mediator.Send(request);
-
-        if (response.Success)
-        {
-            return Ok(response);
-
-        }
-
-        return BadRequest(response);
+        var response = await mediator.Send(request);
+        return response.Success ? Ok(response) : BadRequest(response);
     }
 
-
-
-
-
-
-
-
-}
+    }
 
 
