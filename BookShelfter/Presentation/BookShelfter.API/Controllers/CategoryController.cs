@@ -10,90 +10,59 @@ using Microsoft.AspNetCore.Mvc;
 namespace BookShelfter.API.Controllers;
 
 
+using System.Net;
+using BookShelfter.Application.Features.Commands.Category;
+using BookShelfter.Application.Features.Commands.Category.RemoveCategory;
+using BookShelfter.Application.Features.Queries.Category.GetAllCategory;
+using BookShelfter.Application.Features.Queries.Category.GetBooksByCategory;
+using MediatR;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
-[Route("api/[controller]")]
+namespace BookShelfter.API.Controllers;
+
 [ApiController]
-public class CategoryController : ControllerBase
+[Route("api/[controller]")]
+[Authorize(AuthenticationSchemes = "Bearer")] 
+public class CategoryController(IMediator mediator) : ControllerBase
 {
-    private readonly IMediator _mediator;
+    private readonly IMediator _mediator = mediator;
 
-    public CategoryController(IMediator mediator)
-    {
-
-        _mediator = mediator;
-
-    }
-
+    [Authorize(Roles = "Admin")]
     [HttpPost]
-    public async Task<IActionResult> Post(CreateCategoryCommandRequest createCategoryCommandRequest)
+    public async Task<IActionResult> Post([FromBody] CreateCategoryCommandRequest request)
     {
-        CreateCategoryCommandResponse response = await _mediator.Send(createCategoryCommandRequest);
-
-
-        if (response.Success)
-        {
-            return StatusCode((int)HttpStatusCode.Created);
-
-
-        }
-
-        return BadRequest(new { errors = response.Errors });
-
+        var response = await _mediator.Send(request);
+        return response.Success
+            ? StatusCode((int)HttpStatusCode.Created, new { message = response.Message })
+            : BadRequest(new { errors = response.Errors });
     }
 
-
+    [AllowAnonymous]
     [HttpGet("GetAll")]
     public async Task<IActionResult> GetAll([FromQuery] GetAllCategoryQueryRequest request)
     {
-        try
-        {
-            GetAllCategoryQueryResponse response = await _mediator.Send(request);
-                
-            return Ok(response);
-
-
-        }
-
-        catch (Exception e)
-        {
-            return StatusCode(500, "Internal Server error");
-        }
-
+        var response = await _mediator.Send(request);
+        return Ok(response);
     }
 
-
-
+    [Authorize(Roles = "Admin")]
     [HttpDelete("{CategoryId}")]
     public async Task<IActionResult> RemoveCategoryById([FromRoute] RemoveCategoryCommandRequest request)
     {
-        RemoveCategoryCommandResponse response = await _mediator.Send(request);
-        if (response.Success)
-        {
-            return Ok(response.Message);
-        }
-        return BadRequest(response.Message);
-
+        var response = await _mediator.Send(request);
+        return response.Success
+            ? Ok(new { message = response.Message })
+            : BadRequest(new { message = response.Message });
     }
-    
 
-
+    [AllowAnonymous]
     [HttpGet("{CategoryId}/books")]
-    public async Task<IActionResult> GetBookByCategories([FromRoute] GetBooksByCategoryQueryRequest categoryQueryRequest)
+    public async Task<IActionResult> GetBookByCategories([FromRoute] GetBooksByCategoryQueryRequest request)
     {
-        GetBooksByCategoryQueryResponse response = await _mediator.Send(categoryQueryRequest);
-
-        
-
-        if (response.Success)
-        {
-            return Ok(response);
-
-        }
-        
-        return BadRequest(response.Message);
-
+        var response = await _mediator.Send(request);
+        return response.Success
+            ? Ok(response)
+            : BadRequest(new { message = response.Message });
     }
-
-
-
 }
