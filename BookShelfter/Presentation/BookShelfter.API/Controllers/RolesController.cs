@@ -1,75 +1,53 @@
-﻿using BookShelfter.Application.Features.Commands.Role.AssignRole;
+using BookShelfter.Application.Features.Commands.Role.AssignRole;
 using BookShelfter.Application.Features.Commands.Role.CreateRole;
 using BookShelfter.Application.Features.Commands.Role.RemoveRoleFromUser;
 using BookShelfter.Application.Features.Queries.Role;
-using BookShelfter.SignalR;
 using MediatR;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BookShelfter.API.Controllers
+namespace BookShelfter.API.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+[Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
+public class RolesController(IMediator mediator) : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class RolesController(IMediator mediator) : ControllerBase
+    private readonly IMediator _mediator = mediator;
+
+    [HttpPost("Create")]
+    public async Task<IActionResult> CreateRole([FromBody] CreateRoleCommandRequest request)
     {
-        private readonly IMediator _mediator = mediator;    
+        var response = await _mediator.Send(request);
+        return response.Succes
+            ? Ok(response)
+            : BadRequest(new { message = response.Message });
+    }
 
+    [HttpPost("Assign")]
+    public async Task<IActionResult> AssignRoleToUser([FromBody] AssignRoleCommandRequest request)
+    {
+        var response = await _mediator.Send(request);
+        return response.Succes
+            ? Ok(response)
+            : BadRequest(new { message = response.Message });
+    }
 
-        [HttpPost("Create")]
-        public async Task<IActionResult> CreateRole([FromBody] CreateRoleCommandRequest request)
-        {
-            var response = await _mediator.Send(request);
+    [HttpGet("GetAllRoles")]
+    public async Task<IActionResult> GetAllRolesAsync([FromQuery] GetRolesQueryRequest request)
+    {
+        var response = await _mediator.Send(request);
+        return response.Success
+            ? Ok(response)
+            : BadRequest(new { message = response.Message });
+    }
 
-            if (response.Succes)
-                return Ok(response);
-
-            return BadRequest(response);
-
-
-        }
-
-
-
-        [HttpPost("Assign")]
-        public async Task<IActionResult> AssignRoleTouser([FromBody] AssignRoleCommandRequest request)
-        {
-             var response=await _mediator.Send(request);
-             if (response.Succes)
-                 return Ok(response);
-
-             return BadRequest(response);
-            
-        }
-
-
-
-
-        [HttpGet("GetAllRoles")]
-        public async Task<IActionResult> GetAllRolesAsync([FromQuery]GetRolesQueryRequest request)
-        {
-            var response= await _mediator.Send(request);
-            if (response.Success)
-                return Ok(response);
-
-            return BadRequest(response);
-
-
-        }
-
-
-        [HttpPost("RemoveRoleFromUser")]
-        public async  Task<IActionResult> RemoveRoleFromUser([FromBody] RemoveRoleFromUserRequest request)
-        {
-            var response=await _mediator.Send(request);
-            if (response.Succes)
-            {
-                return Ok(response);
-            }
-
-            return BadRequest(response);
-            
-        }
-
+    [HttpPost("RemoveRoleFromUser")]
+    public async Task<IActionResult> RemoveRoleFromUser([FromBody] RemoveRoleFromUserRequest request)
+    {
+        var response = await _mediator.Send(request);
+        return response.Succes
+            ? Ok(response)
+            : BadRequest(new { message = response.Message });
     }
 }
