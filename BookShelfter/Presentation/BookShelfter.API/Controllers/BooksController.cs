@@ -89,7 +89,7 @@ public class BooksController(IMediator mediator, ILogger<BooksController> logger
         return response.Success ? Ok(response) : BadRequest(response);
     }
 
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")] 
     [HttpPost("mark-as-featured")]
     public async Task<IActionResult> MarkAsFeatured([FromBody] MarkBookAsFeaturedCommandRequest request)
     {
