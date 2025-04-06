@@ -27,7 +27,7 @@ namespace BookShelfter.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize(AuthenticationSchemes = "Bearer")] // Bütün metodlar default qorunur
+[Authorize(AuthenticationSchemes = "Bearer")]
 public class BooksController(IMediator mediator, ILogger<BooksController> logger) : ControllerBase
 {
     private readonly ILogger<BooksController> _logger = logger;
