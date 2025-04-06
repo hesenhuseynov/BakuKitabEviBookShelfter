@@ -1,9 +1,27 @@
-#  BakuKitabevi - E-Commerce Platform 📚
-![Screenshot 2024-11-28 092555](https://github.com/user-attachments/assets/e2e2b11a-ed0c-447c-92c0-9aa2e1b8ee07)
 
-## Backend Hosting Expired
+# 📚 BakuKitabevi – E-Commerce Bookstore Platform
 
-The hosting period for the backend of this project has expired, and as a result, the server is temporarily unavailable. Currently, only the frontend is functional and hosted on Firebase. The single backend API was previously hosted on SmartASP.NET, which has expired. I am actively working on renewing the hosting or transitioning to a new provider. Thank you for your understanding and patience as I work to resolve this issue.(www.bakukitabevi.com)
+![Screenshot](https://github.com/user-attachments/assets/e2e2b11a-ed0c-447c-92c0-9aa2e1b8ee07)
+
+> ⚠️ **Backend Status**: Offline (Hosting expired)  
+> ✅ **Frontend**: Live on [www.bakukitabevi.com](https://www.bakukitabevi.com)
+
+---
+
+## ✨ Overview
+
+**BakuKitabevi** is a scalable e-commerce platform focused on online book sales. Built with modern tools and best practices like **Clean Architecture**, **CQRS**, and **MediatR**, this project aims to provide an enterprise-level backend powered by **ASP.NET Core 8** and a responsive frontend on **Firebase**.
+
+---
+
+## 🔐 Hosting & Deployment Status
+
+| Layer     | Status  | Hosting Provider      |
+|-----------|---------|------------------------|
+| Backend   | ❌ Offline | (was on SmartASP.NET) |
+| Frontend  | ✅ Online  | Firebase              |
+| Future    | 🔄 Migrating to Render / GCP / Azure |
+
 
 
 
