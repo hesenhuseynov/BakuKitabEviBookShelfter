@@ -1,140 +1,111 @@
-﻿using System.Security.Claims;
+using System.Security.Claims;
 using BookShelfter.Application.Features.Queries.AppUser;
 using BookShelfter.Application.Features.Queries.User;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BookShelfter.API.Controllers
+namespace BookShelfter.API.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+[Authorize(AuthenticationSchemes = "Bearer")]
+public class UsersController(IMediator mediator) : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class UsersController : ControllerBase
+    private readonly IMediator _mediator = mediator;
+
+    [HttpGet("profile")]
+    public async Task<IActionResult> GetUserProfile()
     {
-        public readonly IMediator _mediator;
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (string.IsNullOrEmpty(userId))
+            return Unauthorized();
 
-        public UsersController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
+        var query = new GetUserProfileQueryRequest { UserId = userId };
+        var response = await _mediator.Send(query);
 
-        [HttpGet("profile")]
-        [Authorize]
-        public async Task<IActionResult> GetUserProfile()
-        {
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-            var query = new GetUserProfileQueryRequest { UserId = userId };
-
-            var response = await _mediator.Send(query);
-
-
-            if (response.Success)
+        return response.Success
+            ? Ok(new
             {
-                return Ok(new
-                {
-                    response.UserId,
-                    response.UserName,
-                    response.Email  ,
-                    response.NameSurName
-                });
+                response.UserId,
+                response.UserName,
+                response.Email,
+                response.NameSurName
+            })
+            : BadRequest(new { message = response.Message });
+    }
 
-            }
+    [HttpGet("panel")]
+    public IActionResult GetUserPanel()
+    {
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var roles = User.FindAll(ClaimTypes.Role).Select(r => r.Value).ToList();
 
-            return BadRequest(response.Message);
+        if (roles.Contains("Admin"))
+            return Ok(new { UserId = userId, Panel = "Admin Panel" });
 
-        }
+        if (roles.Contains("User"))
+            return Ok(new { UserId = userId, Panel = "User Panel" });
 
-        [HttpGet("panel")]
-        [Authorize]
-        public IActionResult GetUserPanel()
-        {
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            var roles = User.FindAll(ClaimTypes.Role).Select(r => r.Value).ToList();
+        return Forbid();
+    }
 
-            if (roles.Contains("Admin"))
-            {
-                return Ok(new { UserId = userId, Panel = "Admin Panel" });
-            }
-            else if (roles.Contains("User"))
-            {
-                return Ok(new { UserId = userId, Panel = "User Panel" });
-            }
+    [HttpGet]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> GetAllUsers([FromQuery] GetAllUsersQueryRequest request)
+    {
+        var response = await _mediator.Send(request);
+        return response.Sucess
+            ? Ok(response)
+            : BadRequest(new { message = response.Message });
+    }
 
+    [HttpGet("{id}")]
+    [Authorize]
+    public async Task<IActionResult> GetUserById(string id)
+    {
+        var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+        var isAdmin = User.IsInRole("Admin");
+
+        if (id != currentUserId && !isAdmin)
             return Forbid();
 
-        }
+        var query = new GetUserByIdQueryRequest { UserId = id };
+        var response = await _mediator.Send(query);
 
+        return response.Success
+            ? Ok(response)
+            : BadRequest(new { message = response.Message });
+    }
 
-        [HttpGet]
-        //[Authorize(Roles="Admin")]
-        public async Task<IActionResult> GetAllUsers([FromQuery] GetAllUsersQueryRequest request)
-        {
-            var response = await _mediator.Send(request);
+    [HttpPut("{id}")]
+    [Authorize]
+    public async Task<IActionResult> UpdateUser(string id, [FromBody] UpdateUserCommandRequest command)
+    {
+        var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var isAdmin = User.IsInRole("Admin");
 
-            if (response.Sucess)
-                return Ok(response);
+        if (id != currentUserId && !isAdmin)
+            return Forbid();
 
+        command.UserId = id;
+        var response = await _mediator.Send(command);
 
-            return BadRequest(response);
-        }
+        return response.Success
+            ? Ok(new { message = response.Message })
+            : BadRequest(new { message = response.Message });
+    }
 
+    [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> DeleteUser(string id)
+    {
+        var command = new DeleteUserCommandRequest { UserId = id };
+        var response = await _mediator.Send(command);
 
-
-
-        //[HttpGet("{id}")]
-        //[Authorize("Admin")]
-        //public async Task<IActionResult> GetUserById(string id)
-        //{
-        //    var query = new GetUserByIdQueryRequest { UserId = id };
-        //    var response = await _mediator.Send(query);
-
-        //    if (response.Success)
-        //    {
-        //        return Ok(response);
-        //    }
-
-        //    return BadRequest(response.Message);
-        //}
-
-        //[HttpPut("{id}")]
-        //[Authorize]
-        //public async Task<IActionResult> UpdateUser(string id, [FromBody] UpdateUserCommandRequest command)
-        //{
-        //    if (id != User.FindFirst(ClaimTypes.NameIdentifier)?.Value && !User.IsInRole("Admin"))
-        //    {
-        //        return Forbid();
-        //    }
-
-        //    command.UserId = id;
-        //    var response = await _mediator.Send(command);
-
-        //    if (response.Success)
-        //    {
-        //        return Ok(response.Message);
-        //    }
-
-        //    return BadRequest(response.Message);
-        //}
-
-
-
-        //[HttpDelete("{id}")]
-        //[Authorize("Admin")]
-        //public async Task<IActionResult> DeleteUser(string id)
-        //{
-        //    var command = new DeleteUserCommandRequest { UserId = id };
-        //    var response = await _mediator.Send(command);
-
-        //    if (response.Success)
-        //    {
-        //        return Ok(response.Message);
-        //    }
-
-        //    return BadRequest(response.Message);
-        //}
-
-
+        return response.Success
+            ? Ok(new { message = response.Message })
+            : BadRequest(new { message = response.Message });
     }
 }
