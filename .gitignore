@@ -6,7 +6,7 @@ BookShelfter/Presentation/BookShelfter.API/bookimageproject-669337c4b25e.json
 /BookShelfter/bin/
 /BookShelfter/obj/
 /BookShelfter/Test/bin/
-/BookShelfter/Test/obj/
+/BookShelfter/Test/obj/ 
 .vs/
 *.log
 docker-compose.override.yml
